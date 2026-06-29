@@ -146,6 +146,61 @@
   }
   main.secoue{ animation:secousseEcran .5s cubic-bezier(.36,.07,.19,.97); }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  /* ===== PAGE D'ACCUEIL : PARCOURS DES NIVEAUX ===== */
+  #parcours{ position:fixed; inset:0; z-index:200; overflow:auto; display:none; flex-direction:column;
+    background:var(--ciel);
+    padding:14px clamp(12px,2.5vw,30px); }
+  #parcours.on{ display:flex; animation:fade .3s ease; }
+  #parcours .pq-header{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; flex:none; }
+  #parcours .pq-brand{ display:flex; flex-direction:column; gap:1px; }
+  #parcours .pq-logo{ display:flex; align-items:center; }
+  #parcours .pq-logo svg{ height:clamp(26px,5vh,46px); width:auto; display:block; }
+  #parcours .pq-h1{ flex:1 1 auto; text-align:center; font-weight:800; font-size:clamp(18px,2.8vw,34px); line-height:1.05; color:var(--rouge); text-transform:uppercase; }
+  #parcours .pq-compteur{ display:flex; align-items:center; gap:10px; background:var(--blanc); border:3px solid var(--noir); box-shadow:6px 6px 0 0 var(--noir); padding:8px 13px; }
+  #parcours .pq-badges{ display:flex; gap:5px; }
+  #parcours .pq-pastille{ width:18px; height:18px; border:3px solid var(--noir); border-radius:50%; background:#dcdcdc; }
+  #parcours .pq-pastille.ok{ background:var(--vert); }
+  #parcours .pq-ctxt{ font-weight:800; font-size:12px; text-transform:uppercase; line-height:1.05; }
+  #parcours .pq-ctxt span{ color:var(--rouge); }
+  #parcours .pq-stage{ flex:1; min-height:0; margin-top:clamp(14px,2.6vh,30px); display:flex; gap:clamp(10px,2vw,28px); }
+  #parcours .pq-kompaZone{ flex:0.72; min-width:0; display:flex; flex-direction:column; }
+  #parcours .pq-cadre{ background:var(--blanc); border:4px solid var(--noir); box-shadow:9px 9px 0 0 var(--noir); flex:none; margin-top:auto; }
+  #parcours .pq-tete{ background:var(--bleu); color:var(--blanc); font-weight:800; text-transform:uppercase; letter-spacing:.5px; padding:8px 14px; border-bottom:4px solid var(--noir); font-size:clamp(13px,1.7vmin,18px); }
+  #parcours .pq-corps{ padding:13px 16px; font-weight:800; color:var(--bleu); font-size:clamp(13px,1.7vmin,17px); line-height:1.3; }
+  #parcours .pq-kompaBody{ flex:0 1 auto; min-height:0; margin-top:auto; display:flex; align-items:flex-end; justify-content:center; }
+  #parcours .pq-kompaBody img{ max-width:100%; max-height:56vh; object-fit:contain; }
+  #parcours .pq-kompaBody .ph{ font-weight:800; color:var(--rouge); text-align:center; font-size:13px; }
+  #parcours .pq-carte{ flex:1.25; position:relative; min-width:0; }
+  #parcours .pq-route{ position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; overflow:visible; }
+  #parcours .pq-node{ position:absolute; transform:translate(-50%,-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:6px; }
+  #parcours .pq-rond{ position:relative; width:clamp(60px,11vmin,94px); aspect-ratio:1; border-radius:50%; border:5px solid var(--noir); background:var(--bleu); display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; cursor:pointer; box-shadow:0 8px 0 0 rgba(0,0,0,.85); transition:transform .1s, box-shadow .1s, filter .2s; }
+  #parcours .pq-rond:hover{ transform:translateY(2px); box-shadow:0 5px 0 0 rgba(0,0,0,.85); }
+  #parcours .pq-rond:active{ transform:translateY(6px); box-shadow:0 1px 0 0 rgba(0,0,0,.85); }
+  #parcours .pq-rond:focus-visible{ outline:5px solid var(--orange); outline-offset:4px; }
+  #parcours .pq-lvl{ font-weight:800; font-size:clamp(8px,1.3vmin,11px); text-transform:uppercase; letter-spacing:.6px; color:rgba(255,255,255,.95); }
+  #parcours .pq-lettre{ font-weight:800; font-size:clamp(20px,4vmin,34px); color:var(--blanc); text-shadow:2px 2px 0 rgba(0,0,0,.3); margin-top:1px; }
+  #parcours .pq-titre{ font-weight:700; font-size:clamp(9px,1.3vmin,11.5px); color:var(--gris); max-width:150px; text-align:center; line-height:1.1; }
+  #parcours .pq-cta{ font-family:inherit; font-weight:800; font-size:clamp(10px,1.4vmin,12.5px); text-transform:uppercase; letter-spacing:.3px; border:3px solid var(--noir); background:var(--rouge); color:var(--blanc); box-shadow:4px 4px 0 0 var(--noir); padding:6px 11px; cursor:pointer; transition:transform .08s, box-shadow .08s; }
+  #parcours .pq-cta:hover{ transform:translate(2px,2px); box-shadow:2px 2px 0 0 var(--noir); }
+  #parcours .pq-cta:focus-visible{ outline:3px solid var(--orange); outline-offset:2px; }
+  #parcours .pq-coche{ position:absolute; right:-7px; bottom:-7px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; background:var(--vert); color:var(--blanc); border:3px solid var(--noir); border-radius:50%; font-weight:800; font-size:14px; }
+  #parcours .pq-cadenas{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-size:clamp(24px,4.6vmin,36px); }
+  #parcours .pq-node.encours .pq-rond{ animation:pqBattement 1.7s ease-in-out infinite; }
+  @keyframes pqBattement{ 0%,100%{ box-shadow:0 8px 0 0 rgba(0,0,0,.85), 0 0 0 0 rgba(196,77,89,.55);} 50%{ box-shadow:0 8px 0 0 rgba(0,0,0,.85), 0 0 0 12px rgba(196,77,89,0);} }
+  #parcours .pq-node.verrou .pq-rond{ background:#cfcfcf !important; filter:grayscale(1); cursor:not-allowed; }
+  #parcours .pq-node.verrou .pq-rond .pq-lvl, #parcours .pq-node.verrou .pq-rond .pq-lettre{ opacity:0; }
+  #parcours .pq-node.permis .pq-rond{ border-radius:15px; background:var(--blanc); }
+  #parcours .pq-node.permis .pq-rond .pq-lvl{ color:rgba(0,0,0,.75); }
+  #parcours .pq-node.permis .pq-rond .pq-lettre{ font-size:clamp(20px,4vmin,32px); color:var(--noir); text-shadow:none; }
+  #parcours .pq-node.permis .pq-permis-emoji{ font-size:clamp(26px,5.5vmin,42px); line-height:1; }
+  #parcours .pq-node.permis .pq-permis-txt{ font-weight:800; font-size:clamp(14px,3vmin,24px); color:var(--noir); text-transform:uppercase; letter-spacing:.5px; }
+  #parcours .pq-node.permis.gagne .pq-rond{ animation:pqBattement 1.7s ease-in-out infinite; }
+  #parcours .pq-secoue{ animation:pqSecousse .45s cubic-bezier(.36,.07,.19,.97); }
+  @keyframes pqSecousse{ 0%,100%{ transform:translate(-50%,-50%);} 25%{ transform:translate(calc(-50% - 7px),-50%);} 50%{ transform:translate(calc(-50% + 6px),-50%);} 75%{ transform:translate(calc(-50% - 4px),-50%);} }
+  #pq-toast{ position:fixed; left:50%; bottom:18px; transform:translateX(-50%) translateY(18px); background:var(--noir); color:var(--blanc); font-weight:700; font-size:14px; padding:11px 18px; border:4px solid var(--noir); box-shadow:6px 6px 0 0 var(--rouge); opacity:0; pointer-events:none; transition:opacity .25s, transform .25s; z-index:250; max-width:90vw; text-align:center; }
+  #pq-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  @media (max-width:720px){ #parcours .pq-stage{ flex-direction:column; } #parcours .pq-kompaZone{ flex:none; } #parcours .pq-carte{ flex:none; height:60vh; } }
 </style>
 </head>
 <body>
@@ -203,10 +258,44 @@
     <div class="tools">
       <button class="tbtn play" id="startBtn">▶ Démarrer</button>
       <button class="tbtn" id="sonBtn">Son : activé</button>
+      <button class="tbtn" id="pqHomeBtn">◀ Parcours</button>
     </div>
   </header>
   <main id="main"></main>
 </div>
+
+<!-- PAGE D'ACCUEIL : parcours des niveaux -->
+<div id="parcours">
+  <div class="pq-header">
+    <div class="pq-brand">
+      <div class="pq-logo" id="pqLogo"></div>
+    </div>
+    <div class="pq-h1">Le Permis de la Souris</div>
+    <div class="pq-compteur">
+      <div class="pq-badges" id="pqBadges"></div>
+      <div class="pq-ctxt">Niveaux validés<br><span id="pqCompteurNb">0 / 3</span></div>
+    </div>
+  </div>
+  <div class="pq-stage">
+    <div class="pq-kompaZone">
+      <div class="pq-cadre">
+        <div class="pq-tete" id="pqCardTitre">Niveau A</div>
+        <div class="pq-corps" id="pqCardEtat">À commencer</div>
+      </div>
+      <div class="pq-kompaBody" id="pqKompaBody"><span class="ph">Professeur Kompa</span></div>
+    </div>
+    <div class="pq-carte">
+      <svg class="pq-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="none" stroke="#000" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+              vector-effect="non-scaling-stroke"
+              d="M 24 97 C 24 93 27 91 30 90 C 42 86 66 82 72 66 C 80 50 20 56 28 40 C 36 26 56 26 62 12"/>
+        <g id="pqSegments"></g>
+      </svg>
+      <div id="pqNodes"></div>
+    </div>
+  </div>
+</div>
+<div id="pq-toast"></div>
 
 <img id="souris" class="souris-fixe" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjAwIDcwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iMi42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgoKICAgIDwhLS0gQ2FibGUgc29ydGFudCBhIGwnYXZhbnQgKGRldXggdHJhaXRzICsgZW1ib3V0KSAtLT4KICAgIDxwYXRoIGQ9Ik0yOTMsMTMyIEMyOTEsNzggMzE4LDU4IDM0MiwzMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTMwMywxMzMgQzMwMSw4MiAzMjgsNjYgMzUxLDM4IiBmaWxsPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMzQyLDMwIEMzNDYsMjYgMzUxLDI4IDM1MSwzOCIgZmlsbD0ibm9uZSIvPgoKICAgIDwhLS0gQ29ycHMgZGUgbGEgc291cmlzICh2dWUgZGUgZGVzc3VzKSwgcmVtcGxpIGVuIGJsYW5jIC0tPgogICAgPHBhdGggZD0iTTMwMCwxMzAKICAgICAgICAgICAgIEMzNjIsMTMwIDQwNiwxMzYgNDE5LDE2NgogICAgICAgICAgICAgQzQ0MSwyMTIgNDUzLDMzMCA0NTEsNDMyCiAgICAgICAgICAgICBDNDUxLDU0MCAzNjAsNjM2IDMwMCw2MzYKICAgICAgICAgICAgIEMyNDAsNjM2IDE0OSw1NDAgMTQ5LDQzMgogICAgICAgICAgICAgQzE0NywzMzAgMTU5LDIxMiAxODEsMTY2CiAgICAgICAgICAgICBDMTk0LDEzNiAyMzgsMTMwIDMwMCwxMzAgWiIKICAgICAgICAgIGZpbGw9IiNmZmZmZmYiLz4KCiAgICA8IS0tIFNlcGFyYXRpb24gZGVzIGRldXggYm91dG9ucyAoYXZhbnQpIC0tPgogICAgPHBhdGggZD0iTTMwMCwxMzggTDMwMCwzMzAiIGZpbGw9Im5vbmUiLz4KCiAgICA8IS0tIExpbWl0ZSBlbnRyZSBsYSB6b25lIGRlcyBjbGljcyBldCBsJ2FycmllcmUgKHJlcG9zZS1wYXVtZSkgLS0+CiAgICA8cGF0aCBkPSJNMTU2LDM0OCBDMjEyLDM3OCAzODgsMzc4IDQ0NCwzNDgiIGZpbGw9Im5vbmUiLz4KCiAgICA8IS0tIE1vbGV0dGUgZGUgZGVmaWxlbWVudCwgY2VudHJlZSBwcmVzIGRlIGwnYXZhbnQgLS0+CiAgICA8cmVjdCB4PSIyODUiIHk9IjE3NiIgd2lkdGg9IjMwIiBoZWlnaHQ9Ijg0IiByeD0iMTUiIGZpbGw9IiNmZmZmZmYiLz4KICAgIDxsaW5lIHgxPSIyODkiIHkxPSIxOTgiIHgyPSIzMTEiIHkyPSIxOTgiLz4KICAgIDxsaW5lIHgxPSIyODgiIHkxPSIyMTgiIHgyPSIzMTIiIHkyPSIyMTgiLz4KICAgIDxsaW5lIHgxPSIyODkiIHkxPSIyMzgiIHgyPSIzMTEiIHkyPSIyMzgiLz4KCiAgPC9nPgo8L3N2Zz4K" alt="souris">
 
@@ -325,7 +414,7 @@ const CONFIG = {
 /* Son */
 let sonOn=true, frVoice=null, AC=null;
 const sonBtn=document.getElementById('sonBtn');
-sonBtn.onclick=()=>{ sonOn=!sonOn; sonBtn.textContent=sonOn?'Son : activé':'Son : coupé'; sonBtn.classList.toggle('on',!sonOn); if(!sonOn){ if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); } if(sonOn){ try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){} try{ speechSynthesis.resume(); }catch(e){} } };
+sonBtn.onclick=()=>{ sonOn=!sonOn; sonBtn.textContent=sonOn?'Son : activé':'Son : coupé'; sonBtn.classList.toggle('on',!sonOn); if(!sonOn){ if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); } if(sonOn){ try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){} try{ speechSynthesis.resume(); }catch(e){} } if(!sonOn){ musiqueStop(); } else { musiqueStart(); musiqueDuck(!(pqEl && pqEl.classList.contains('on'))); } };
 function pickVoice(){
   const v=speechSynthesis.getVoices();
   const fr=v.filter(x=>x.lang&&x.lang.toLowerCase().startsWith('fr'));
@@ -698,9 +787,11 @@ function renderBadge(){
   </div>`;
   els={ titre:document.getElementById('titre'), btn:document.getElementById('rejouer') };
   bipOk();
+  pqSetFait('A');   // niveau A validé → débloque la suite dans le parcours
   // Oral du badge, puis la réaction de Kompa au record (clips optionnels : 'recordBattu' / 'recordTient')
   playOral('badge', ()=>{ playOral(recordBattu?'recordBattu':'recordTient'); });
-  els.btn.onclick=()=>{ bipClic(); allerA(0); };
+  els.btn.textContent='↩ Retour au parcours';
+  els.btn.onclick=()=>{ bipClic(); ouvrirParcours(); };
 }
 
 /* (Mode édition retiré) */
@@ -726,7 +817,154 @@ startBtn.onclick=()=>{
   bipClic(); allerA(0);
 };
 
-majProg(); majRetour(); renderSplash();
+/* ===== PAGE D'ACCUEIL : parcours des niveaux ===== */
+const PQ_NIVEAUX = [
+  { id:"A", lettre:"A", titre:"Déplacement & clic gauche", couleur:"var(--bleu)",   x:30, y:90, dispo:true },
+  { id:"B", lettre:"B", titre:"Maintien & glisser-déposer", couleur:"var(--rouge)",  x:72, y:66, dispo:false },
+  { id:"C", lettre:"C", titre:"Clic droit & molette",        couleur:"var(--orange)", x:28, y:40, dispo:false }
+];
+const PQ_PERMIS = { lettre:"Permis", titre:"Récompense finale", x:62, y:12 };
+const PQ_SEGS = [
+  { d:"M 24 97 C 24 93 27 91 30 90", arr:0 },
+  { d:"M 30 90 C 42 86 66 82 72 66", arr:1 },
+  { d:"M 72 66 C 80 50 20 56 28 40", arr:2 },
+  { d:"M 28 40 C 36 26 56 26 62 12", arr:3 }
+];
+function pqGetFaits(){ try{ const r=localStorage.getItem('permisNiveauxFaits'); if(r){ const a=JSON.parse(r); if(Array.isArray(a)) return a; } }catch(e){} return []; }
+function pqSetFait(id){ try{ const a=pqGetFaits(); if(!a.includes(id)){ a.push(id); localStorage.setItem('permisNiveauxFaits', JSON.stringify(a)); } }catch(e){} }
+function pqNbFaits(){ const f=pqGetFaits(); return PQ_NIVEAUX.filter(n=>f.includes(n.id)).length; }
+function pqTousFaits(){ const f=pqGetFaits(); return PQ_NIVEAUX.every(n=>f.includes(n.id)); }
+function pqEtatNiveau(n){ return pqGetFaits().includes(n.id) ? 'valide' : (n.dispo ? 'encours' : 'verrou'); }
+
+const pqEl=document.getElementById('parcours');
+const pqNodes=document.getElementById('pqNodes');
+const pqSegEl=document.getElementById('pqSegments');
+const pqBadges=document.getElementById('pqBadges');
+const pqCompteurNb=document.getElementById('pqCompteurNb');
+const pqCardTitre=document.getElementById('pqCardTitre');
+const pqCardEtat=document.getElementById('pqCardEtat');
+const pqKompaBody=document.getElementById('pqKompaBody');
+const pqHomeBtn=document.getElementById('pqHomeBtn');
+const pqLogo=document.getElementById('pqLogo');
+
+function pqToast(msg){ const t=document.getElementById('pq-toast'); if(!t)return; t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),2200); }
+
+function pqRendreSegments(){
+  pqSegEl.innerHTML='';
+  const faits=pqGetFaits();
+  let idxEncours=-1;
+  for(let i=0;i<PQ_NIVEAUX.length;i++){ if(!faits.includes(PQ_NIVEAUX[i].id)){ idxEncours=i; break; } }
+  PQ_SEGS.forEach(s=>{
+    let atteint;
+    if(s.arr<3){ const n=PQ_NIVEAUX[s.arr]; atteint = faits.includes(n.id) || (s.arr===idxEncours); }
+    else { atteint = pqTousFaits(); }
+    const core=document.createElementNS('http://www.w3.org/2000/svg','path');
+    core.setAttribute('d',s.d); core.setAttribute('fill','none');
+    core.setAttribute('stroke', atteint?'var(--rouge)':'var(--grisroute)');
+    core.setAttribute('stroke-width','9'); core.setAttribute('stroke-linecap','round'); core.setAttribute('stroke-linejoin','round'); core.setAttribute('vector-effect','non-scaling-stroke');
+    pqSegEl.appendChild(core);
+    const band=document.createElementNS('http://www.w3.org/2000/svg','path');
+    band.setAttribute('d',s.d); band.setAttribute('fill','none'); band.setAttribute('stroke','#ffffff');
+    band.setAttribute('stroke-width','9'); band.setAttribute('stroke-linecap','butt'); band.setAttribute('stroke-dasharray','3 7'); band.setAttribute('vector-effect','non-scaling-stroke'); band.setAttribute('opacity','.85');
+    pqSegEl.appendChild(band);
+  });
+}
+
+function pqNoeud(data, etat, isPermis){
+  const div=document.createElement('div');
+  div.className='pq-node '+etat+(isPermis?' permis':'');
+  div.style.left=data.x+'%'; div.style.top=data.y+'%';
+  let rondInner, cta='';
+  if(isPermis){
+    rondInner = (etat==='gagne') ? '<span class="pq-permis-txt">Permis</span>' : '<span class="pq-permis-emoji">🏅</span>';
+  } else {
+    const coche=etat==='valide'?'<span class="pq-coche">✓</span>':'';
+    const cadenas=etat==='verrou'?'<span class="pq-cadenas">🔒</span>':'';
+    rondInner = `<span class="pq-lvl">Niveau</span><span class="pq-lettre">${data.lettre}</span>${coche}${cadenas}`;
+    if(etat==='encours') cta='<button class="pq-cta">▶ Commencer</button>';
+    else if(etat==='valide') cta='<button class="pq-cta">↺ Rejouer</button>';
+  }
+  div.innerHTML=`
+    <div class="pq-rond" role="button" tabindex="0" ${isPermis?'':`style="background:${data.couleur}"`}>
+      ${rondInner}
+    </div>
+    ${cta}`;
+  const go=()=>pqActiver(data, etat, div, isPermis);
+  const rond=div.querySelector('.pq-rond');
+  rond.addEventListener('click', go);
+  rond.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
+  const b=div.querySelector('.pq-cta'); if(b) b.addEventListener('click', e=>{ e.stopPropagation(); go(); });
+  return div;
+}
+
+function renderParcours(){
+  if(pqLogo && !pqLogo.firstChild){ const appLogo=document.querySelector('header .logo svg'); if(appLogo){ const c=appLogo.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id')); pqLogo.appendChild(c); } }
+  if(pqKompaBody && typeof KOMPA_SRC!=='undefined' && KOMPA_SRC){ pqKompaBody.innerHTML=`<img src="${KOMPA_SRC}" alt="Professeur Kompa">`; }
+  pqRendreSegments();
+  pqNodes.innerHTML='';
+  PQ_NIVEAUX.forEach(n=> pqNodes.appendChild(pqNoeud(n, pqEtatNiveau(n), false)));
+  pqNodes.appendChild(pqNoeud(PQ_PERMIS, pqTousFaits()?'gagne':'attente', true));
+  const nb=pqNbFaits();
+  if(pqCompteurNb) pqCompteurNb.textContent=nb+' / 3';
+  if(pqBadges){ pqBadges.innerHTML=''; for(let k=0;k<3;k++){ const p=document.createElement('span'); p.className='pq-pastille'+(k<nb?' ok':''); pqBadges.appendChild(p); } }
+  // carte d'état : bandeau = niveau actuel, corps = avancement
+  const faits=pqGetFaits();
+  const courant=PQ_NIVEAUX.find(n=>!faits.includes(n.id));
+  if(!courant){ pqCardTitre.textContent='Le Permis'; pqCardEtat.textContent='Permis obtenu — bravo, les Kompagnons !'; }
+  else { pqCardTitre.textContent='Niveau '+courant.lettre; pqCardEtat.textContent = courant.dispo ? 'Clique sur la pastille pour démarrer !' : 'Bientôt disponible'; }
+}
+
+function pqActiver(data, etat, div, isPermis){
+  if(isPermis){
+    if(etat==='gagne'){ pqToast('🏅 Permis de la Souris obtenu — bravo !'); }
+    else { div.classList.remove('pq-secoue'); void div.offsetWidth; div.classList.add('pq-secoue'); pqToast('🏅 Termine les 3 niveaux pour gagner ton Permis !'); }
+    return;
+  }
+  if(etat==='verrou'){
+    div.classList.remove('pq-secoue'); void div.offsetWidth; div.classList.add('pq-secoue');
+    pqToast(`🔒 Niveau ${data.lettre} arrive bientôt !`);
+    return;
+  }
+  if(data.id==='A') lancerNiveauA();
+}
+
+/* --- Musique de fond du parcours --- */
+let MUSIQUE_B64 = "";   /* ← colle ici le base64 d'un MP3 (en boucle) ; vide = petite musique de secours synthétisée */
+let musiqueAudio=null, musiqueActive=false, musiqueTimer=null, musiqueSynthOn=false, musiqueDucked=false;
+const MUS_VOL={normal:0.35, duck:0.06}, MUS_SYNTH={normal:0.1, duck:0.02};
+function musiqueDuck(on){ musiqueDucked=on; if(musiqueAudio){ try{ musiqueAudio.volume = on?MUS_VOL.duck:MUS_VOL.normal; }catch(e){} } }
+function musiqueInit(){ if(MUSIQUE_B64 && !musiqueAudio){ try{ musiqueAudio=new Audio('data:audio/mpeg;base64,'+MUSIQUE_B64); musiqueAudio.loop=true; musiqueAudio.volume=musiqueDucked?MUS_VOL.duck:MUS_VOL.normal; }catch(e){} } }
+const PQ_MELODIE=[523.25,659.25,783.99,659.25,880.00,783.99,659.25,587.33,523.25,659.25,587.33,523.25,440.00,523.25,587.33,659.25];
+const PQ_BASSE={0:130.81,4:196.00,8:220.00,12:196.00}; let pqStep=0;
+function pqSynthNote(freq,dur,vol,type){ if(!AC) return; try{ const o=AC.createOscillator(), g=AC.createGain(); o.type=type||'triangle'; o.frequency.value=freq; const t=AC.currentTime; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+0.012); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+dur+0.05); }catch(e){} }
+function pqSynthStart(){ if(musiqueSynthOn) return; musiqueSynthOn=true; try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){} pqStep=0;
+  musiqueTimer=setInterval(()=>{ if(!sonOn||!musiqueActive) return; const v=musiqueDucked?MUS_SYNTH.duck:MUS_SYNTH.normal; const i=pqStep%PQ_MELODIE.length; pqSynthNote(PQ_MELODIE[i],0.22,v,'triangle'); if(PQ_BASSE[i]!=null) pqSynthNote(PQ_BASSE[i],0.42,v*1.1,'sine'); pqStep++; }, 200); }
+function pqSynthStop(){ musiqueSynthOn=false; if(musiqueTimer){ clearInterval(musiqueTimer); musiqueTimer=null; } }
+function musiqueStart(){ if(!sonOn) return; musiqueActive=true; if(MUSIQUE_B64){ musiqueInit(); if(musiqueAudio){ const p=musiqueAudio.play(); if(p&&p.catch) p.catch(()=>{}); } } else { pqSynthStart(); } }
+function musiqueStop(){ musiqueActive=false; if(musiqueAudio){ try{ musiqueAudio.pause(); }catch(e){} } pqSynthStop(); }
+/* reprise au 1er geste (politique d'autoplay des navigateurs) */
+(function(){ const h=()=>{ if(musiqueActive){ try{ if(AC&&AC.state==='suspended') AC.resume(); }catch(e){} if(MUSIQUE_B64&&musiqueAudio){ const p=musiqueAudio.play(); if(p&&p.catch) p.catch(()=>{}); } } }; document.addEventListener('pointerdown',h); document.addEventListener('keydown',h); })();
+
+function ouvrirParcours(){
+  clearInactivite(); clearTempo(); sinonCourant=null;
+  if(libreIv){ clearInterval(libreIv); libreIv=null; }
+  if(papRaf){ cancelAnimationFrame(papRaf); papRaf=null; }
+  if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); activerSuivi(false);
+  renderParcours(); pqEl.classList.add('on'); musiqueStart(); musiqueDuck(false);
+}
+function debloqueAudio(){
+  try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){}
+  if('speechSynthesis' in window){ try{ speechSynthesis.resume(); const w=new SpeechSynthesisUtterance('Go'); w.lang='fr-FR'; w.volume=0; speechSynthesis.speak(w); }catch(e){} }
+}
+function lancerNiveauA(){
+  debloqueAudio(); musiqueStart(); musiqueDuck(true);
+  pqEl.classList.remove('on');
+  demarre=true; if(startBtn) startBtn.style.display='none';
+  bipClic(); allerA(0);
+}
+if(pqHomeBtn) pqHomeBtn.onclick=()=>{ bipClic(); ouvrirParcours(); };
+
+majProg(); majRetour(); ouvrirParcours();
 </script>
 </body>
 </html>
