@@ -53,7 +53,7 @@
   .kompa-centre{ position:absolute; left:50%; top:56%; transform:translate(-50%,-50%); height:min(64vh,540px); width:auto; pointer-events:none; user-select:none; transition:opacity .3s, left .6s ease; }
   .kompa-centre.gauche{ left:23%; }
   .kompa-droite{ position:absolute; right:4%; bottom:0; height:min(62vh,520px); width:auto; pointer-events:none; user-select:none; z-index:5; }
-  .kompa-bulle{ position:absolute; right:17%; bottom:36%; max-width:min(360px,42vw); background:var(--blanc); border:5px solid var(--rouge); box-shadow:10px 10px 0 0 var(--noir); padding:16px 20px; font-weight:800; font-size:clamp(15px,1.8vw,23px); line-height:1.22; color:var(--noir); text-align:left; z-index:8; animation:cochePop .5s cubic-bezier(.2,1.5,.4,1); }
+  .kompa-bulle{ position:absolute; left:4%; right:auto; bottom:44%; max-width:min(320px,36vw); background:var(--blanc); border:5px solid var(--rouge); box-shadow:10px 10px 0 0 var(--noir); padding:16px 20px; font-weight:800; font-size:clamp(15px,1.8vw,23px); line-height:1.22; color:var(--noir); text-align:left; z-index:8; animation:cochePop .5s cubic-bezier(.2,1.5,.4,1); }
   .kompa-bulle::after{ content:""; position:absolute; right:-22px; bottom:34px; border:14px solid transparent; border-left-color:var(--rouge); }
   .kompa-bulle.gagne{ border-color:var(--vert); }
   .kompa-bulle.gagne::after{ border-left-color:var(--vert); }
@@ -104,7 +104,7 @@
   .legende .lg .it{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; }
   .legende .pastille{ width:24px; height:24px; border:3px solid var(--noir); flex:none; }
   .souris-wrap{ position:relative; display:inline-block; line-height:0; z-index:2; transition:transform .8s cubic-bezier(.45,.05,.2,1); }
-  .souris-wrap.zoom{ transform:scale(1.5); transform-origin:39% 36%; z-index:45; }
+  .souris-wrap.zoom{ transform:translateY(-30%) scale(1.5); transform-origin:39% 36%; z-index:45; }
   .clic-effet{ position:absolute; inset:0; }
   .clic-zone{ position:absolute; left:39%; top:36%; width:clamp(46px,6vw,82px); height:clamp(46px,6vw,82px); transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle, rgba(0,93,168,.55), rgba(0,93,168,0) 70%); animation:clicGlow 1.4s ease-in-out infinite; pointer-events:none; }
   .clic-ring{ position:absolute; left:39%; top:36%; width:clamp(34px,4.6vw,58px); height:clamp(34px,4.6vw,58px); border:4px solid var(--bleu); border-radius:50%; transform:translate(-50%,-50%) scale(.4); animation:clicRipple 1.4s ease-out infinite; pointer-events:none; }
@@ -133,6 +133,18 @@
   .carte-succes .coche{ font-size:clamp(48px,8vw,92px); line-height:1; }
   .carte-succes .msg{ font-weight:800; font-size:clamp(26px,4.4vw,54px); text-transform:uppercase; }
   @keyframes cochePop{ 0%{ transform:scale(0) rotate(-12deg); opacity:0;} 60%{ transform:scale(1.12) rotate(4deg); opacity:1;} 100%{ transform:scale(1) rotate(0);} }
+  /* === Vibration de l'écran (curseur immobile / erreur) === */
+  @keyframes secousseEcran{
+    0%,100%{ transform:translate(0,0); }
+    12%{ transform:translate(-9px,4px); }
+    24%{ transform:translate(8px,-5px); }
+    36%{ transform:translate(-7px,5px); }
+    48%{ transform:translate(7px,-4px); }
+    60%{ transform:translate(-5px,3px); }
+    72%{ transform:translate(5px,-3px); }
+    84%{ transform:translate(-3px,2px); }
+  }
+  main.secoue{ animation:secousseEcran .5s cubic-bezier(.36,.07,.19,.97); }
   @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
 </style>
 </head>
@@ -190,7 +202,6 @@
     </div>
     <div class="tools">
       <button class="tbtn play" id="startBtn">▶ Démarrer</button>
-      <button class="tbtn" id="retourBtn">◀ Retour</button>
       <button class="tbtn" id="sonBtn">Son : activé</button>
     </div>
   </header>
@@ -357,7 +368,9 @@ function playOral(key, onend){
   if(pr&&pr.catch) pr.catch(()=>{ if(my===oralToken && onend) setTimeout(fin, 4000); });
 }
 function bip(f,d=0.1,ty='square'){ if(!sonOn) return; try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); const o=AC.createOscillator(),g=AC.createGain(); o.type=ty;o.frequency.value=f;o.connect(g);g.connect(AC.destination); g.gain.setValueAtTime(0.18,AC.currentTime); g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+d); o.start();o.stop(AC.currentTime+d);}catch(e){} }
-const bipClic=()=>bip(660,0.09), bipOk=()=>{bip(523,0.1);setTimeout(()=>bip(784,0.16),90);}, bipNon=()=>bip(180,0.16,'sawtooth');
+const bipClic=()=>bip(660,0.09), bipOk=()=>{bip(523,0.1);setTimeout(()=>bip(784,0.16),90);}, bipNon=()=>{ bip(180,0.16,'sawtooth'); secoueEcran(); };
+/* Vibration de l'écran : nudge quand le curseur ne suit pas / sur une erreur */
+function secoueEcran(){ const m=document.getElementById('main'); if(!m) return; m.classList.remove('secoue'); void m.offsetWidth; m.classList.add('secoue'); }
 
 /* État + navigation */
 const main=document.getElementById('main'), souris=document.getElementById('souris');
@@ -393,7 +406,7 @@ function montreCarte(){}
 function cacheCarte(){}
 function kompaDroite(){ return `<img class="kompa-droite" src="${KOMPA_SRC}" alt="Professeur Kompa">`; }
 function setHeaderTools(visible){ // masque Son + Retour (ex. sur l'écran de victoire)
-  retourBtn.style.display = visible ? '' : 'none';
+  if(retourBtn) retourBtn.style.display = visible ? '' : 'none';
   sonBtn.style.display = visible ? '' : 'none';
 }
 let tempoTimer=null, libreIv=null, papRaf=null;
@@ -418,8 +431,8 @@ const parcours=[ ()=>renderPresentationNotion(), ()=>renderPhaseTest(), ()=>rend
 let etape=0;
 function allerA(i){ etape=Math.max(0,Math.min(parcours.length-1,i)); clearInactivite(); clearTempo(); sinonCourant=null; if(libreIv){clearInterval(libreIv); libreIv=null;} if(papRaf){cancelAnimationFrame(papRaf); papRaf=null;} if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); activerSuivi(false); cacheCarte(); setHeaderTools(true); parcours[etape](); majRetour(); }
 const retourBtn=document.getElementById('retourBtn');
-retourBtn.onclick=()=>allerA(etape-1);
-function majRetour(){ retourBtn.textContent=U.btnRetour; retourBtn.disabled=(etape===0); }
+if(retourBtn) retourBtn.onclick=()=>allerA(etape-1);
+function majRetour(){ if(retourBtn){ retourBtn.textContent=U.btnRetour; retourBtn.disabled=(etape===0); } }
 function majProg(){ document.getElementById('progLabel').textContent=U.progressLabel; }
 
 /* ÉCRAN 1 — Présentation de la notion (déplacement) : Kompa au centre explique */
@@ -451,8 +464,6 @@ function renderPhaseTest(){
       <div class="timerlabel">⏱ Suis le papillon avec la souris !</div>
     </div>
     <div class="papillon embete" id="papillon" style="display:none"><img src="${PAPILLON_IMG}" alt="papillon"></div>
-    <!-- BOUTON DE TEST TEMPORAIRE — à retirer ensuite -->
-    <button id="skipTest" class="tbtn" style="position:absolute;right:0;bottom:0;z-index:50;background:#eee">⏭️ Écran suivant (test)</button>
     ${kompaCentre('gauche')}
   </div>`;
   els={ titre:document.getElementById('titre'), ecran:document.getElementById('ecranBox'), apres:document.getElementById('apres') };
@@ -494,7 +505,7 @@ function startSuiviPapillon(){
   sinonCourant=null;
   const label=document.querySelector('#libre .timerlabel');
   // Le chrono n'avance que si l'enfant SUIT vraiment le papillon (curseur proche + souris qui bouge)
-  let followMs=0, lastTick=performance.now();
+  let followMs=0, lastTick=performance.now(), lastShake=performance.now();
   if(libreIv) clearInterval(libreIv);
   libreIv=setInterval(()=>{
     const now=performance.now(); const dt=now-lastTick; lastTick=now;
@@ -502,7 +513,7 @@ function startSuiviPapillon(){
     const moved=(now-lastMoveT)<1200;
     const dist=Math.hypot(mx-pcx, my-pcy);
     const suit = moved && dist<170;          // seuil généreux pour des enfants
-    if(suit) followMs+=dt;
+    if(suit){ followMs+=dt; } else if(now-lastShake>1100){ secoueEcran(); lastShake=now; }
     const resteMs=Math.max(0, 20000-followMs);
     if(num) num.textContent=Math.ceil(resteMs/1000);
     if(fill) fill.style.width=(resteMs/20000*100)+'%';
