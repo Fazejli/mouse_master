@@ -53,6 +53,10 @@
   .kompa-centre{ position:absolute; left:50%; top:56%; transform:translate(-50%,-50%); height:min(64vh,540px); width:auto; pointer-events:none; user-select:none; transition:opacity .3s, left .6s ease; }
   .kompa-centre.gauche{ left:23%; }
   .kompa-droite{ position:absolute; right:4%; bottom:0; height:min(62vh,520px); width:auto; pointer-events:none; user-select:none; z-index:5; }
+  .kompa-bulle{ position:absolute; right:17%; bottom:36%; max-width:min(360px,42vw); background:var(--blanc); border:5px solid var(--rouge); box-shadow:10px 10px 0 0 var(--noir); padding:16px 20px; font-weight:800; font-size:clamp(15px,1.8vw,23px); line-height:1.22; color:var(--noir); text-align:left; z-index:8; animation:cochePop .5s cubic-bezier(.2,1.5,.4,1); }
+  .kompa-bulle::after{ content:""; position:absolute; right:-22px; bottom:34px; border:14px solid transparent; border-left-color:var(--rouge); }
+  .kompa-bulle.gagne{ border-color:var(--vert); }
+  .kompa-bulle.gagne::after{ border-left-color:var(--vert); }
   /* Slide de victoire */
   .victoire{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:0 6% 0 4%; text-align:center; }
   .victoire .ruban{ display:flex; align-items:center; gap:18px; }
@@ -99,8 +103,8 @@
   .legende .lg{ display:flex; flex-direction:column; gap:10px; }
   .legende .lg .it{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; }
   .legende .pastille{ width:24px; height:24px; border:3px solid var(--noir); flex:none; }
-  .souris-wrap{ position:relative; display:inline-block; line-height:0; transition:transform .8s cubic-bezier(.45,.05,.2,1); }
-  .souris-wrap.zoom{ transform:scale(1.5); transform-origin:39% 36%; }
+  .souris-wrap{ position:relative; display:inline-block; line-height:0; z-index:2; transition:transform .8s cubic-bezier(.45,.05,.2,1); }
+  .souris-wrap.zoom{ transform:scale(1.5); transform-origin:39% 36%; z-index:45; }
   .clic-effet{ position:absolute; inset:0; }
   .clic-zone{ position:absolute; left:39%; top:36%; width:clamp(46px,6vw,82px); height:clamp(46px,6vw,82px); transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle, rgba(0,93,168,.55), rgba(0,93,168,0) 70%); animation:clicGlow 1.4s ease-in-out infinite; pointer-events:none; }
   .clic-ring{ position:absolute; left:39%; top:36%; width:clamp(34px,4.6vw,58px); height:clamp(34px,4.6vw,58px); border:4px solid var(--bleu); border-radius:50%; transform:translate(-50%,-50%) scale(.4); animation:clicRipple 1.4s ease-out infinite; pointer-events:none; }
@@ -358,6 +362,7 @@ const bipClic=()=>bip(660,0.09), bipOk=()=>{bip(523,0.1);setTimeout(()=>bip(784,
 /* État + navigation */
 const main=document.getElementById('main'), souris=document.getElementById('souris');
 let current={kind:null,index:0}, inactivite=null, suiviSouris=false;
+let recordBattu=false;
 let els={}, sinonCourant=null;
 const U=CONFIG.ui;
 const cssVar=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -632,7 +637,8 @@ function startMission(i){
 /* Record battu sur la dernière mission → formulaire prénom + école */
 function finMission5(elapsed){
   const rec=getRecord();
-  if(elapsed < rec.temps){ montreFormRecord(elapsed); }
+  recordBattu = (elapsed < rec.temps);
+  if(recordBattu){ montreFormRecord(elapsed); }
   else { setTimeout(()=>allerA(etape+1), 300); }
 }
 function montreFormRecord(elapsed){
@@ -665,6 +671,9 @@ function renderBadge(){
     const left=6+k*6.5, delay=(k%7)*0.32, emo=['🎉','✨','⭐','🎊','🌟'][k%5];
     return `<div class="conf" style="left:${left}%;animation-delay:${delay}s">${emo}</div>`;
   }).join('');
+  const reaction = recordBattu
+    ? { cls:'gagne', txt:'Et en plus, record battu — quelle vitesse, je suis bluffé !' }
+    : { cls:'',      txt:'Le record tient encore, mais ce sera pour la prochaine fois !' };
   main.innerHTML=`<div class="screen active">
     <div class="record-coin">🏆 Record : ${fmtTemps(rec.temps)}<br><span>${rec.prenom} — ${rec.ecole}</span></div>
     <div class="victoire">
@@ -673,11 +682,13 @@ function renderBadge(){
       <h1 id="titre">${U.titreVictoire}</h1>
       <button class="btn" id="rejouer" style="align-self:center;margin-top:6px">${U.btnRecommencer}</button>
     </div>
+    <div class="kompa-bulle ${reaction.cls}">${reaction.txt}</div>
     ${kompaDroite()}
   </div>`;
   els={ titre:document.getElementById('titre'), btn:document.getElementById('rejouer') };
   bipOk();
-  playOral('badge');
+  // Oral du badge, puis la réaction de Kompa au record (clips optionnels : 'recordBattu' / 'recordTient')
+  playOral('badge', ()=>{ playOral(recordBattu?'recordBattu':'recordTient'); });
   els.btn.onclick=()=>{ bipClic(); allerA(0); };
 }
 
