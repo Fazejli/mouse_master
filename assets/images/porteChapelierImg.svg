@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="238,158 562,158 562,880 238,880" fill="#141414"></polygon>
+  <polygon points="238,158 562,158 238,560" fill="#1c1c1c"></polygon>
+  <polygon points="562,158 562,560 400,880 238,880 238,560" fill="#181818"></polygon>
+  <polygon points="300,880 500,880 470,800 330,800" fill="#2a2622"></polygon>
+  <polygon points="368,560 392,548 388,600 362,592" fill="#f88639"></polygon>
+  <polygon points="492,560 468,548 472,600 498,592" fill="#e0702a"></polygon>
+  <polygon points="430,610 474,628 448,654" fill="#ccc3b8"></polygon>
+  <polygon points="430,610 448,654 412,654" fill="#ccc3b8"></polygon>
+  <polygon points="430,610 412,654 386,628" fill="#ccc3b8"></polygon>
+  <polygon points="430,610 386,628 386,592" fill="#ccc3b8"></polygon>
+  <polygon points="430,610 386,592 412,566" fill="#fffaec"></polygon>
+  <polygon points="430,610 412,566 448,566" fill="#ffffff"></polygon>
+  <polygon points="430,610 448,566 474,592" fill="#fffaec"></polygon>
+  <polygon points="430,610 474,592 474,628" fill="#ccc3b8"></polygon>
+  <polygon points="352,548 508,548 502,562 358,562" fill="#4d3268"></polygon>
+  <polygon points="352,548 430,548 430,562 358,562" fill="#66438d"></polygon>
+  <polygon points="374,548 486,548 478,430 366,436" fill="#66438d"></polygon>
+  <polygon points="374,548 430,548 430,433 366,436" fill="#7d55a8"></polygon>
+  <polygon points="470,430 478,430 486,548 474,548" fill="#553679"></polygon>
+  <polygon points="371,520 489,520 487,492 369,496" fill="#d360a9"></polygon>
+  <polygon points="371,520 430,518 430,494 369,496" fill="#e07fbe"></polygon>
+  <polygon points="452,516 484,514 482,478 450,481" fill="#ffffff"></polygon>
+  <polygon points="456,506 478,504 478,500 456,502" fill="#464646"></polygon>
+  <polygon points="456,496 472,495 472,491 456,492" fill="#464646"></polygon>
+  <polygon points="410,598 422,598 422,612 410,612" fill="#000000"></polygon>
+  <polygon points="438,598 450,598 450,612 438,612" fill="#000000"></polygon>
+  <polygon points="410,634 450,634 442,646 418,646" fill="#b8564f"></polygon>
+  <polygon points="430,664 402,652 402,680" fill="#d360a9"></polygon>
+  <polygon points="430,664 458,652 458,680" fill="#b84f92"></polygon>
+  <polygon points="424,658 436,658 436,672 424,672" fill="#e07fbe"></polygon>
+  <polygon points="390,668 470,668 488,845 372,845" fill="#1b4e30"></polygon>
+  <polygon points="390,668 430,668 418,760 430,845 400,845 384,760" fill="#153d26"></polygon>
+  <polygon points="416,668 444,668 430,720" fill="#ffffff"></polygon>
+  <polygon points="390,688 366,718 376,736 396,710" fill="#1b4e30"></polygon>
+  <polygon points="470,688 494,718 484,736 464,710" fill="#153d26"></polygon>
+  <polygon points="396,845 424,845 420,880 390,880" fill="#464646"></polygon>
+  <polygon points="436,845 464,845 470,880 440,880" fill="#2e2e2e"></polygon>
+  <polygon points="200,120 600,120 600,158 200,158" fill="#5a5a5a"></polygon>
+  <polygon points="200,120 400,120 400,158 200,158" fill="#464646"></polygon>
+  <polygon points="200,120 238,158 238,880 200,880" fill="#464646"></polygon>
+  <polygon points="200,120 238,158 238,520 200,520" fill="#5a5a5a"></polygon>
+  <polygon points="600,120 562,158 562,880 600,880" fill="#2e2e2e"></polygon>
+  <polygon points="600,520 562,520 562,880 600,880" fill="#1f1f1f"></polygon>
+  <polygon points="238,158 118,200 118,852 238,880" fill="#983c45"></polygon>
+  <polygon points="238,158 118,200 238,555" fill="#a8424c"></polygon>
+  <polygon points="118,200 98,206 98,848 118,852" fill="#e15866"></polygon>
+  <polygon points="223,215 139,240 139,466 223,456" fill="#81323a"></polygon>
+  <polygon points="223,215 139,240 139,254 223,229" fill="#65282e"></polygon>
+  <polygon points="223,526 139,530 139,783 223,797" fill="#81323a"></polygon>
+  <polygon points="223,526 139,530 139,543 223,540" fill="#65282e"></polygon>
+  <polygon points="132,591 145,597 138,604" fill="#f2f2f2"></polygon>
+  <polygon points="132,591 138,604 127,604" fill="#a1a1a1"></polygon>
+  <polygon points="132,591 127,604 119,597" fill="#a1a1a1"></polygon>
+  <polygon points="132,591 119,597 119,586" fill="#a1a1a1"></polygon>
+  <polygon points="132,591 119,586 127,578" fill="#a1a1a1"></polygon>
+  <polygon points="132,591 127,578 138,578" fill="#a1a1a1"></polygon>
+  <polygon points="132,591 138,578 145,586" fill="#f2f2f2"></polygon>
+  <polygon points="132,591 145,586 145,597" fill="#ffffff"></polygon>
+  <polygon points="190,880 610,880 618,912 182,912" fill="#464646"></polygon>
+  <polygon points="190,880 400,880 400,912 182,912" fill="#5a5a5a"></polygon>
+</svg>
