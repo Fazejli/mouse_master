@@ -1,4 +1,4 @@
-  :root{ --rouge:#C44D59; --bleu:#005da8; --vert:#1b4e30; --rose:#d360a9; --violet:#66438d; --orange:#f88639; --noir:#000; --gris:#464646; --blanc:#fff; --ciel:#e6f4fd; }
+:root{ --rouge:#C44D59; --bleu:#005da8; --vert:#1b4e30; --rose:#d360a9; --violet:#66438d; --orange:#f88639; --noir:#000; --gris:#464646; --blanc:#fff; --ciel:#e6f4fd; }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html,body{ height:100%; }
   body{ font-family:'Montserrat',Arial,sans-serif; font-weight:400; background:var(--ciel); color:var(--noir); overflow:hidden; }
@@ -45,6 +45,7 @@
   .kompa-img{ position:absolute; bottom:0; left:0; height:min(44vh,340px); width:auto; pointer-events:none; user-select:none; }
   .kompa-centre{ position:absolute; left:50%; top:56%; transform:translate(-50%,-50%); height:min(64vh,540px); width:auto; pointer-events:none; user-select:none; transition:opacity .3s, left .6s ease; }
   .kompa-centre.gauche{ left:23%; }
+  .kompa-centre.droite{ left:77%; }
   .kompa-centre.petit{ height:min(38vh,320px); }
   .kompa-droite{ position:absolute; right:4%; bottom:0; height:min(62vh,520px); width:auto; pointer-events:none; user-select:none; z-index:5; }
   .kompa-bulle{ position:absolute; left:4%; right:auto; bottom:44%; max-width:min(320px,36vw); background:var(--blanc); border:5px solid var(--rouge); box-shadow:10px 10px 0 0 var(--noir); padding:16px 20px; font-weight:800; font-size:clamp(15px,1.8vw,23px); line-height:1.22; color:var(--noir); text-align:left; z-index:8; animation:cochePop .5s cubic-bezier(.2,1.5,.4,1); }
@@ -351,3 +352,89 @@
   .mb-objet img{ width:100%; height:100%; object-fit:contain; pointer-events:none; filter:drop-shadow(3px 4px 0 rgba(0,0,0,.2)); }
   .mb-objet.tenu{ cursor:grabbing; z-index:50; }
   .mb-objet.pose{ cursor:default; }
+
+  /* ===================== NIVEAU C — Le clic droit & la molette ===================== */
+  .mc-menu{ position:fixed; z-index:80; background:#fff; border:3px solid var(--orange); border-radius:10px; box-shadow:6px 6px 0 rgba(0,0,0,.18); padding:8px; display:flex; flex-direction:column; gap:6px; min-width:190px; animation:fade .15s ease; }
+  .mc-menu button{ font:inherit; font-weight:800; font-size:clamp(14px,1.6vw,18px); padding:9px 16px; border:2px solid var(--orange); border-radius:8px; background:#fff7ef; color:var(--gris); cursor:pointer; text-align:left; }
+  .mc-menu button:hover{ background:var(--orange); color:#fff; }
+
+  .mc-damier{ position:relative; width:min(90vw,640px); height:min(56vh,420px); overflow:hidden; border:5px solid #111; border-radius:18px; margin:0 auto; background:repeating-conic-gradient(#f0e3ee 0% 25%, #7d55a8 0% 50%) 0 0/64px 64px; }
+  .mc-damier-inner{ position:absolute; left:50%; top:50%; transform-origin:center center; }
+  .mc-damier-item{ position:absolute; transform:translate(-50%,-50%); user-select:none; }
+  .mc-damier-item.tresor{ cursor:pointer; pointer-events:none; }
+  .mc-damier-item.tresor.actif{ pointer-events:auto; filter:drop-shadow(0 0 14px rgba(212,175,55,.8)); }
+
+  .mc-couloir-track{ position:absolute; left:0; top:0; width:100%; will-change:transform; }
+  .mc-chat{ position:absolute; left:50%; width:26%; transform:translate(-50%,-50%); cursor:pointer; opacity:0; transition:opacity .35s ease; pointer-events:none; }
+  .mc-chat.vu{ opacity:.55; pointer-events:auto; }
+
+  .mc-cartes-scene{ position:relative; width:96%; max-width:none; margin:0 auto; height:min(56vh,400px); display:flex; align-items:center; justify-content:space-evenly; }
+  .mc-carte{ width:min(38vw,220px); height:auto; cursor:pointer; filter:drop-shadow(6px 6px 0 rgba(0,0,0,.14)); transition:transform .18s ease, opacity .3s ease; }
+  .mc-carte.avachie{ transform:rotate(-7deg) translateY(10px); }
+  .mc-carte.sortie{ opacity:0; transform:translateY(50px) scale(.82); }
+  .mc-cartes-msg{ position:fixed; right:3%; top:34%; transform:translateX(12px); background:var(--violet); color:#fff; font-weight:800; font-size:clamp(16px,2vw,26px); padding:12px 26px; box-shadow:8px 8px 0 rgba(0,0,0,.18); z-index:55; opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; max-width:26vw; text-align:center; }
+  .mc-cartes-msg.show{ opacity:1; transform:translateX(0); }
+
+  .mc-boss-track{ display:flex; gap:10px; justify-content:center; margin:0 0 16px; }
+  .mc-boss-step{ width:34px; height:34px; border-radius:50%; border:3px solid #111; background:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#111; opacity:.4; transition:opacity .2s, background .2s, color .2s; }
+  .mc-boss-step.active{ opacity:1; background:var(--orange); color:#fff; box-shadow:0 5px 0 rgba(0,0,0,.2); }
+  .mc-boss-step.done{ opacity:1; background:var(--vert); color:#fff; }
+  .mc-boss-scene{ position:relative; width:min(90vw,640px); height:min(46vh,340px); margin:0 auto; }
+  .mc-boss-item{ position:absolute; cursor:pointer; transition:transform .18s ease, opacity .3s ease; touch-action:none; }
+  .mc-boss-item.cache{ opacity:0; pointer-events:none; }
+  .mc-boss-item.tenu{ cursor:grabbing; z-index:20; }
+  .mc-kaleido{ position:relative; width:min(60vw,360px); height:min(60vw,360px); border-radius:50%; overflow:hidden; border:5px solid #111; background:#fff; margin:0 auto; display:flex; align-items:center; justify-content:center; }
+  .mc-kaleido img{ transition:filter .15s linear; }
+
+  /* ===================== NIVEAU C — v2 (Le clic droit & le défilement à deux doigts) ===================== */
+  .mc-decor-damier{ position:absolute; inset:0; z-index:-1; opacity:.5; background:repeating-conic-gradient(#f0e3ee 0% 25%, #7d55a8 0% 50%) 0 0/56px 56px; }
+  .mc-menu-ic{ width:22px; height:22px; object-fit:contain; margin-right:8px; vertical-align:-6px; }
+  .mc-menu button{ display:flex; align-items:center; }
+
+  .mc-couloir{ position:relative; width:min(70vw,420px); height:min(56vh,420px); overflow:hidden; border:5px solid #111; border-radius:18px; background:linear-gradient(#1B4E30,#153d26); margin:0 auto; }
+  .mc-couloir{ position:relative; width:min(52vw,620px); height:min(70vh,680px); overflow:hidden; border:6px solid #111; border-radius:22px; background:linear-gradient(#dff2e4,#c9e9d4); margin:3vh auto 0; }
+  .mc-couloir-item{ position:absolute; left:50%; transform:translate(-50%,-50%); pointer-events:none; opacity:.85; }
+  .mc-couloir-mini{ position:relative; width:110px; height:170px; overflow:hidden; border:4px solid #111; border-radius:12px; background:linear-gradient(#dff2e4,#c9e9d4); }
+  .mc-couloir-mini-track{ position:absolute; left:0; width:100%; }
+  .mc-doigts-demo{ position:relative; width:90px; }
+  .mc-doigts-demo img{ display:block; width:100%; height:auto; }
+
+  .mc-record-badge{ position:fixed; left:50%; top:14%; transform:translateX(-50%); background:var(--orange); color:#fff; font-weight:800; font-size:clamp(16px,2.2vw,26px); padding:10px 24px; border-radius:12px; box-shadow:6px 6px 0 rgba(0,0,0,.18); opacity:0; transition:opacity .3s ease; z-index:60; }
+  .mc-record-badge.show{ opacity:1; }
+  .mc-chrono{ position:fixed; right:3%; top:14%; font-weight:800; font-size:clamp(20px,2.6vw,30px); color:var(--gris); background:#fff; border:3px solid var(--orange); border-radius:12px; padding:8px 18px; z-index:40; }
+
+  .mc-jardin{ position:relative; width:min(90vw,640px); height:min(58vh,440px); overflow:hidden; border:5px solid #111; border-radius:18px; background:linear-gradient(#bfe6a0,#8fce6a); margin:0 auto; }
+  .mc-jardin-track{ position:absolute; left:0; top:0; width:100%; will-change:transform; }
+  .mc-piece{ position:absolute; width:56px; height:56px; cursor:pointer; transform:translate(-50%,-50%); transition:transform .15s ease, opacity .25s ease; }
+  .mc-piece:hover{ transform:translate(-50%,-50%) scale(1.12); }
+  .mc-piece.ramassee{ opacity:0; pointer-events:none; }
+  .mc-buisson{ position:absolute; width:120px; height:120px; cursor:pointer; transform:translate(-50%,-50%); transition:opacity .3s ease, transform .3s ease; }
+  .mc-buisson.disparu{ opacity:0; transform:translate(-50%,-50%) scale(.6); pointer-events:none; }
+  .mc-coin-compteur{ position:relative; font-weight:800; font-size:clamp(16px,2vw,24px); color:#7a5a12; background:#fff; border:3px solid #d4af37; border-radius:12px; padding:6px 14px; display:flex; align-items:center; gap:8px; box-shadow:3px 3px 0 rgba(0,0,0,.14); }
+  .mc-jardin-zone{ display:flex; flex-direction:column; align-items:center; gap:10px; width:min(90vw,640px); }
+  .mc-jardin-zone .mc-coin-compteur{ align-self:flex-end; }
+  .mc-fumee{ position:absolute; width:140px; height:140px; transform:translate(-50%,-50%); pointer-events:none; opacity:0; }
+  .mc-fumee.actif{ animation:mcFumeeMonte 1s ease-out forwards; }
+  @keyframes mcFumeeMonte{ 0%{ opacity:.9; transform:translate(-50%,-50%) scale(.6);} 100%{ opacity:0; transform:translate(-50%,-160%) scale(1.6);} }
+
+  /* ===================== NIVEAU C — v3 (retours) ===================== */
+  /* Bandeaux de victoire compacts (au lieu de la bannière pleine largeur) */
+  #mcPTWin .m1-win-card, #mc1Win .m1-win-card, #mc2Win .m1-win-card, #mc3aWin .m1-win-card, #mc3bWin .m1-win-card, #mc4Win .m1-win-card{ max-width:min(460px,90vw); }
+
+  /* Décor de scène (remplace le damier) : dégradé doux + quelques assets existants dispersés, non interactifs */
+  .mc-decor-scene{ position:absolute; inset:0; z-index:-1; overflow:hidden; background:linear-gradient(180deg,#eef3ff, #dfeaff 60%, #d8e6c9); }
+  .mc-decor-item{ position:absolute; opacity:.5; pointer-events:none; filter:saturate(.85); }
+
+  /* Menu contextuel : options avec feedback (correcte/incorrecte) gérées en JS via classes existantes */
+
+  /* Démo "ordinateur" (clic droit / défilement) : reprise du format laptop du Niveau B */
+  .mc-demo-menu{ position:absolute; background:#fff7ef; border:3px solid var(--orange); border-radius:8px; padding:6px; font-weight:800; font-size:13px; color:var(--gris); box-shadow:4px 4px 0 rgba(0,0,0,.16); opacity:0; transition:opacity .25s ease; pointer-events:none; }
+  .mc-demo-menu.show{ opacity:1; }
+  .mc-demo-menu div{ padding:3px 10px; }
+  .mc-lap-screen-overlay{ position:absolute; left:17.5%; top:6.7%; width:65%; height:41.4%; overflow:hidden; pointer-events:none; }
+  .mc-lap-scroll-track{ position:absolute; left:0; top:0; width:100%; display:flex; flex-direction:column; align-items:center; gap:10px; padding-top:6px; }
+  .mc-lap-scroll-track img, .mc-lap-scroll-track span{ opacity:.8; }
+
+  /* Jardin : coffres normaux + gain de pièces variable */
+  .mc-gain-vole{ position:fixed; font-weight:800; font-size:clamp(18px,2.4vw,28px); color:#7a5a12; z-index:70; pointer-events:none; animation:mcGainVole 1s ease-out forwards; }
+  @keyframes mcGainVole{ 0%{ opacity:1; transform:translateY(0);} 100%{ opacity:0; transform:translateY(-60px);} }

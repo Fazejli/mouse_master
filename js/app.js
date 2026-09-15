@@ -4,14 +4,28 @@ window.__resources = {"porteChapelierImg": "assets/images/porteChapelierImg.svg"
 "fioleB": "assets/images/fiole-drinkme-origami-v1.png",
 "presentoirVide": "assets/images/presentoir-vide-fil-origami-v1.png", "presentoirComplet": "assets/images/presentoir-complet-fil-origami-v1.png", "presentoirFinal": "assets/images/presentoir-final-origami-v1.png",
 "itemCupcake": "assets/images/item-cupcake-origami-v3.png", "itemTheiere": "assets/images/item-theiere-origami-v3.png", "itemMontre": "assets/images/item-montre-origami-v3.png", "itemCle": "assets/images/item-cle-origami-v3.png", "itemGateau": "assets/images/item-gateau-origami-v3.png", "itemTasse": "assets/images/item-tasse-origami-v3.png",
-"kompaPeekGauche": "assets/images/kompa_peek_gauche-9a5c8893.png"
+"kompaPeekGauche": "assets/images/kompa_peek_gauche-9a5c8893.png",
+"lapinBlancImg": "assets/images/lapinBlancImg.svg", "chatCheshireImg": "assets/images/chatCheshireImg.svg",
+"coffreBonbonsImg": "assets/images/coffreBonbonsImg.svg",
+"iconSuivreImg": "assets/images/iconSuivreImg.svg", "iconSiesteImg": "assets/images/iconSiesteImg.svg", "iconCarotteImg": "assets/images/iconCarotteImg.svg",
+"carteGardeImg": "assets/images/carteGardeImg.svg", "carteReposImg": "assets/images/carteReposImg.svg",
+"pieceOrImg": "assets/images/pieceOrImg.svg", "buissonImg": "assets/images/buissonImg.svg",
+"coffreTresorFinalImg": "assets/images/coffreTresorFinalImg.svg", "fumeeImg": "assets/images/fumeeImg.svg",
+"deuxDoigtsScrollImg": "assets/images/deuxDoigtsScrollImg.svg",
+"iconFermerImg": "assets/images/iconFermerImg.svg", "iconSupprimerImg": "assets/images/iconSupprimerImg.svg",
+"scratchIconImg": "assets/images/scratchIconImg.png", "scratchFenetreImg": "assets/images/scratchFenetreImg.png", "bureauScratchImg": "assets/images/bureauScratchImg.png",
+"scratchDemoVideo": "assets/images/scratchDemoVideo.mp4"
 };
 
 const MOUSE_SRC="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjAwIDcwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iMi42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgoKICAgIDwhLS0gQ2FibGUgc29ydGFudCBhIGwnYXZhbnQgKGRldXggdHJhaXRzICsgZW1ib3V0KSAtLT4KICAgIDxwYXRoIGQ9Ik0yOTMsMTMyIEMyOTEsNzggMzE4LDU4IDM0MiwzMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggZD0iTTMwMywxMzMgQzMwMSw4MiAzMjgsNjYgMzUxLDM4IiBmaWxsPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMzQyLDMwIEMzNDYsMjYgMzUxLDI4IDM1MSwzOCIgZmlsbD0ibm9uZSIvPgoKICAgIDwhLS0gQ29ycHMgZGUgbGEgc291cmlzICh2dWUgZGUgZGVzc3VzKSwgcmVtcGxpIGVuIGJsYW5jIC0tPgogICAgPHBhdGggZD0iTTMwMCwxMzAKICAgICAgICAgICAgIEMzNjIsMTMwIDQwNiwxMzYgNDE5LDE2NgogICAgICAgICAgICAgQzQ0MSwyMTIgNDUzLDMzMCA0NTEsNDMyCiAgICAgICAgICAgICBDNDUxLDU0MCAzNjAsNjM2IDMwMCw2MzYKICAgICAgICAgICAgIEMyNDAsNjM2IDE0OSw1NDAgMTQ5LDQzMgogICAgICAgICAgICAgQzE0NywzMzAgMTU5LDIxMiAxODEsMTY2CiAgICAgICAgICAgICBDMTk0LDEzNiAyMzgsMTMwIDMwMCwxMzAgWiIKICAgICAgICAgIGZpbGw9IiNmZmZmZmYiLz4KCiAgICA8IS0tIFNlcGFyYXRpb24gZGVzIGRldXggYm91dG9ucyAoYXZhbnQpIC0tPgogICAgPHBhdGggZD0iTTMwMCwxMzggTDMwMCwzMzAiIGZpbGw9Im5vbmUiLz4KCiAgICA8IS0tIExpbWl0ZSBlbnRyZSBsYSB6b25lIGRlcyBjbGljcyBldCBsJ2FycmllcmUgKHJlcG9zZS1wYXVtZSkgLS0+CiAgICA8cGF0aCBkPSJNMTU2LDM0OCBDMjEyLDM3OCAzODgsMzc4IDQ0NCwzNDgiIGZpbGw9Im5vbmUiLz4KCiAgICA8IS0tIE1vbGV0dGUgZGUgZGVmaWxlbWVudCwgY2VudHJlZSBwcmVzIGRlIGwnYXZhbnQgLS0+CiAgICA8cmVjdCB4PSIyODUiIHk9IjE3NiIgd2lkdGg9IjMwIiBoZWlnaHQ9Ijg0IiByeD0iMTUiIGZpbGw9IiNmZmZmZmYiLz4KICAgIDxsaW5lIHgxPSIyODkiIHkxPSIxOTgiIHgyPSIzMTEiIHkyPSIxOTgiLz4KICAgIDxsaW5lIHgxPSIyODgiIHkxPSIyMTgiIHgyPSIzMTIiIHkyPSIyMTgiLz4KICAgIDxsaW5lIHgxPSIyODkiIHkxPSIyMzgiIHgyPSIzMTEiIHkyPSIyMzgiLz4KCiAgPC9nPgo8L3N2Zz4K",
-/* Mascotte Professeur Kompa — PLACEHOLDER temporaire.
-   Pour remettre ton vrai Kompa : remplace la valeur ci-dessous
+/* Mascotte Professeur Pile Poil — PLACEHOLDER temporaire.
+   Pour remettre ta vraie mascotte : remplace la valeur ci-dessous
    par "data:image/png;base64,XXXX" (ta vraie image). */
 KOMPA_SRC="assets/images/kompaSrc.webp";
+
+/* Nom affiché/lu de la mascotte. Les identifiants techniques (kompaEl, kompaPeekImg, KOMPA_SRC,
+   classes CSS .kompa-*, noms de fichiers) restent inchangés : seul le texte visible porte ce nom. */
+const PROF_NOM="Professeur Pile Poil";
 
 
 const PAP_LOWPOLY=window.__resources.papillonLow;
@@ -23,12 +37,12 @@ const FINGER_SRC="data:image/svg+xml,"+encodeURIComponent(`<svg xmlns='http://ww
 let _tpN=0;
 function trackpadHTML(opts){
   opts=opts||{}; const id='tpc'+(++_tpN);
-  const lf=(opts.colored||opts.leftOnly)?'var(--bleu)':'#ffffff', rf=opts.colored?'var(--orange)':'#ffffff';
+  const lf=(opts.colored||opts.leftOnly)?'var(--bleu)':'#ffffff', rf=(opts.colored||opts.rightOnly)?'var(--orange)':'#ffffff';
   return `<svg class="trackpad-svg" viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs><clipPath id="${id}"><rect x="40" y="30" width="520" height="400" rx="46"/></clipPath></defs>
     <g clip-path="url(#${id})">
       <rect x="40" y="30" width="520" height="400" fill="#ffffff"/>
-      <rect x="40" y="322" width="260" height="112" fill="${lf}"/>
+      <rect class="tp-left" x="40" y="322" width="260" height="112" fill="${lf}"/>
       <rect class="tp-right" x="300" y="322" width="260" height="112" fill="${rf}"/>
     </g>
     <rect x="40" y="30" width="520" height="400" rx="46" fill="none" stroke="#111111" stroke-width="6"/>
@@ -47,7 +61,7 @@ const CONFIG = {
     btnSuivant:"Suivant ▶",
     btnOuvrir:"Ouvrir les portes ▶",
     btnCommencer:"C'est parti ▶",
-    legendeEcoute:"🔊 Écoute bien le Professeur Kompa !",
+    legendeEcoute:"🔊 Écoute bien le "+PROF_NOM+" !",
     titreNotion:"Le Permis de la Souris",
     titrePhaseTest:"Suis le papillon",
     titrePresentationClic:"Le clic gauche",
@@ -120,7 +134,7 @@ const bipClic=()=>bip(660,0.09), bipOk=()=>{bip(523,0.1);setTimeout(()=>bip(784,
 /* Vibration de l'écran : nudge quand le curseur ne suit pas / sur une erreur */
 function secoueEcran(){ const m=document.getElementById('main'); if(!m) return; m.classList.remove('secoue'); void m.offsetWidth; m.classList.add('secoue'); }
 
-/* === Voix Professeur Kompa — clips E1..E8 par écran, + E_V/E_D pour les missions === */
+/* === Voix du Professeur Pile Poil — clips E1..E8 par écran, + E_V/E_D pour les missions === */
 const ECRAN_AUDIO=[window.__resources.e1audio,window.__resources.e2audio,window.__resources.e3audio,window.__resources.e4audio,window.__resources.e5audio,window.__resources.e6audio,window.__resources.e7audio,window.__resources.e8audio];
 const MISSION_V={2:window.__resources.e3vaudio,3:window.__resources.e4vaudio,5:window.__resources.e6vaudio,6:window.__resources.e7vaudio};
 const ecranAudio=new Audio(); ecranAudio.preload='auto';
@@ -186,7 +200,7 @@ function armeInactivite(key){ clearInactivite(); if(!key) return; inactivite=set
 let mx=window.innerWidth/2, my=window.innerHeight/2, lastMoveT=0;
 document.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; lastMoveT=performance.now(); if(suiviSouris){ souris.style.left=e.clientX+'px'; souris.style.top=e.clientY+'px'; } if(sinonCourant) armeInactivite(sinonCourant); });
 function activerSuivi(on){ suiviSouris=on; souris.style.display=on?'block':'none'; if(on && !souris.style.left){ souris.style.left=(window.innerWidth/2)+'px'; souris.style.top=(window.innerHeight/2)+'px'; } }
-/* === Professeur Kompa — vidéos animées (expressions labiales synchronisées à la voix off) ===
+/* === Professeur Pile Poil — vidéos animées (expressions labiales synchronisées à la voix off) ===
    Dépose les fichiers .mp4/.webm à côté d'index.html et renseigne les chemins ci-dessous.
    Laisser "" garde l'image fixe en repli (le poster = image fixe pendant le chargement). */
 const KOMPA_POSTER=KOMPA_SRC;
@@ -200,8 +214,8 @@ const KOMPA_VIDEOS={
 function kompaEl(cls, id, key, poster){
   const src=KOMPA_VIDEOS[key||'parle']; const p=poster||KOMPA_POSTER;
   const idAttr=id?` id="${id}"`:'';
-  if(src){ return `<video class="${cls}"${idAttr} src="${src}" poster="${p}" muted loop playsinline autoplay preload="auto" aria-label="Professeur Kompa"></video>`; }
-  return `<img class="${cls}"${idAttr} src="${p}" alt="Professeur Kompa">`;
+  if(src){ return `<video class="${cls}"${idAttr} src="${src}" poster="${p}" muted loop playsinline autoplay preload="auto" aria-label="${PROF_NOM}"></video>`; }
+  return `<img class="${cls}"${idAttr} src="${p}" alt="${PROF_NOM}">`;
 }
 function kompaCentre(extra){ return kompaEl('kompa-centre '+(extra||''), 'kompaC', 'parle'); }
 function montreCarte(){}
@@ -213,6 +227,23 @@ function setHeaderTools(visible){ // masque Son + Retour (ex. sur l'écran de vi
 }
 let tempoTimer=null, libreIv=null, papRaf=null;
 function clearTempo(){ if(tempoTimer){ clearTimeout(tempoTimer); tempoTimer=null; } }
+/* ===== Effet de clic commun a tout le jeu =====
+   Un clic (simule dans les demos) doit se VOIR : la zone pressee s'eclaircit brievement,
+   puis revient a sa couleur. Utilise par les niveaux A, B et C pour une lecture identique. */
+const CLIC_FLASH_MS=220;
+function flashClic(zone, couleurNormale){
+  if(!zone) return;
+  if(zone.__flashTO) clearTimeout(zone.__flashTO);
+  zone.setAttribute('fill','#ffffff');
+  zone.__flashTO=setTimeout(()=>{ zone.setAttribute('fill', couleurNormale); zone.__flashTO=null; }, CLIC_FLASH_MS);
+}
+/* Maintien enfonce (niveau B) : la zone reste eclaircie tant que le doigt appuie. */
+function pressClic(zone, couleurNormale, enfonce){
+  if(!zone) return;
+  if(zone.__flashTO){ clearTimeout(zone.__flashTO); zone.__flashTO=null; }
+  zone.setAttribute('fill', enfonce ? '#ffffff' : couleurNormale);
+}
+function clearFlashIv(){ if(window.__flashIv){ clearInterval(window.__flashIv); window.__flashIv=null; } }
 function tempo(ms, fn){ clearTempo(); /* passage auto désactivé : navigation par bouton */ }
 function cacheKompa(){ cacheCarte(); const k=document.getElementById('kompaC'); if(k){ k.classList.remove('parle'); if(k.tagName==='VIDEO'){ try{ k.pause(); }catch(e){} } k.classList.add('partie'); setTimeout(()=>{ if(k) k.style.display='none'; }, 320); } }
 function kompaParleOn(){ const k=document.getElementById('kompaC'); if(k){ k.classList.add('parle'); if(k.tagName==='VIDEO'){ try{ k.currentTime=0; const p=k.play(); if(p&&p.catch) p.catch(()=>{}); }catch(e){} } } }
@@ -227,7 +258,7 @@ let etape=0;
 function allerA(i){
   const cible=Math.max(0,Math.min(parcours.length-1,i));
   const run=()=>{
-    etape=cible; clearInactivite(); clearTempo(); sinonCourant=null; if(libreIv){clearInterval(libreIv); libreIv=null;} if(papRaf){cancelAnimationFrame(papRaf); papRaf=null;} if(window.lapRaf){cancelAnimationFrame(window.lapRaf); window.lapRaf=null;} if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); stopToutAudio(); activerSuivi(false); cacheCarte(); setHeaderTools(true); main.style.opacity='1'; parcours[etape](); majRetour();
+    etape=cible; clearInactivite(); clearTempo(); clearFlashIv(); sinonCourant=null; if(libreIv){clearInterval(libreIv); libreIv=null;} if(papRaf){cancelAnimationFrame(papRaf); papRaf=null;} if(window.lapRaf){cancelAnimationFrame(window.lapRaf); window.lapRaf=null;} if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); stopToutAudio(); activerSuivi(false); cacheCarte(); setHeaderTools(true); main.style.opacity='1'; parcours[etape](); majRetour();
   };
   if(main.firstElementChild){ main.style.transition='opacity .32s ease'; main.style.opacity='0'; setTimeout(run,320); } else run();
 }
@@ -342,8 +373,22 @@ function renderPresentationClic(){
   // D'abord la souris seule (taille normale, sans la main ni l'effet).
   // Puis, au moment où Kompa parle du clic gauche : zoom + apparition de la main qui appuie + effet.
   setTimeout(()=>{
+    // Garde-fou : si l'ecran a change entre-temps, ne rien toucher (un autre ecran affiche
+    // aussi un trackpad et serait modifie a tort par ce minuteur devenu obsolete).
+    if(current.kind!=='presentationClic') return;
     const ef=document.querySelector('.clic-effet');
     if(ef) ef.style.display='block';
+    // Meme effet de clic que partout ailleurs : la zone bleue s'eclaire a chaque appui,
+    // au rythme de l'anneau anime (1,4 s) deja utilise sur cet ecran.
+    const zg=document.querySelector('.souris-wrap.tp .tp-left');
+    if(zg){
+      clearFlashIv();
+      flashClic(zg, 'var(--bleu)');
+      window.__flashIv=setInterval(()=>{
+        if(current.kind!=='presentationClic'){ clearFlashIv(); return; }
+        flashClic(zg, 'var(--bleu)');
+      }, 1400);
+    }
   }, 6000);
   kompaParleOn();
   let droiteBlanchie=false;
@@ -563,7 +608,7 @@ function refreshEditPanel(){}
 const PQ_NIVEAUX = [
   { id:"A", lettre:"A", titre:"Déplacement & clic gauche", couleur:"var(--bleu)",   x:30, y:90, dispo:true },
   { id:"B", lettre:"B", titre:"Maintien & glisser-déposer", couleur:"var(--rouge)",  x:72, y:66, dispo:true },
-  { id:"C", lettre:"C", titre:"Clic droit & molette",        couleur:"var(--orange)", x:28, y:40, dispo:false }
+  { id:"C", lettre:"C", titre:"Clic droit & molette",        couleur:"var(--orange)", x:28, y:40, dispo:true }
 ];
 const PQ_PERMIS = { lettre:"Permis", titre:"Récompense finale", x:62, y:12 };
 const PQ_SEGS = [
@@ -576,7 +621,14 @@ function pqGetFaits(){ try{ const r=localStorage.getItem('permisNiveauxFaits'); 
 function pqSetFait(id){ try{ const a=pqGetFaits(); if(!a.includes(id)){ a.push(id); localStorage.setItem('permisNiveauxFaits', JSON.stringify(a)); } }catch(e){} }
 function pqNbFaits(){ const f=pqGetFaits(); return PQ_NIVEAUX.filter(n=>f.includes(n.id)).length; }
 function pqTousFaits(){ const f=pqGetFaits(); return PQ_NIVEAUX.every(n=>f.includes(n.id)); }
-function pqEtatNiveau(n){ return pqGetFaits().includes(n.id) ? 'valide' : (n.dispo ? 'encours' : 'verrou'); }
+function pqEtatNiveau(n){
+  const f=pqGetFaits();
+  if(f.includes(n.id)) return 'valide';
+  // Enchainement impose : on ne joue B que si A est valide, C que si B l'est.
+  const idx=PQ_NIVEAUX.findIndex(x=>x.id===n.id);
+  const precedentFait = idx<=0 || f.includes(PQ_NIVEAUX[idx-1].id);
+  return (n.dispo && precedentFait) ? 'encours' : 'verrou';
+}
 
 const pqEl=document.getElementById('parcours');
 const pqNodes=document.getElementById('pqNodes');
@@ -618,7 +670,9 @@ function pqNoeud(data, etat, isPermis){
   div.style.left=data.x+'%'; div.style.top=data.y+'%';
   let rondInner, cta='';
   if(isPermis){
-    rondInner = (etat==='gagne') ? '<span class="pq-permis-txt">Permis</span>' : '<span class="pq-permis-emoji">🏅</span>';
+    rondInner = (etat==='gagne')
+      ? '<img class="pq-permis-medaille" src="assets/images/medaille.webp" alt="Permis de la Souris" style="width:72%; height:auto; display:block; margin:auto">'
+      : '<span class="pq-permis-emoji" style="filter:grayscale(1); opacity:.55">🔒</span>';
   } else {
     const coche=etat==='valide'?'<span class="pq-coche">✓</span>':'';
     const cadenas=etat==='verrou'?'<span class="pq-cadenas">🔒</span>':'';
@@ -653,7 +707,17 @@ function renderParcours(){
   const faits=pqGetFaits();
   const courant=PQ_NIVEAUX.find(n=>!faits.includes(n.id));
   if(!courant){ pqCardTitre.textContent='Le Permis'; pqCardEtat.textContent='Permis obtenu — bravo, les Kompagnons !'; }
-  else { pqCardTitre.textContent='Niveau '+courant.lettre; pqCardEtat.textContent = courant.dispo ? 'Clique sur la pastille pour démarrer !' : 'Bientôt disponible'; }
+  else {
+    pqCardTitre.textContent='Niveau '+courant.lettre;
+    const etatC=pqEtatNiveau(courant);
+    if(etatC==='verrou'){
+      const idxC=PQ_NIVEAUX.findIndex(x=>x.id===courant.id);
+      const precC=idxC>0 ? PQ_NIVEAUX[idxC-1].lettre : null;
+      pqCardEtat.textContent = precC ? ('Termine le niveau '+precC+' pour débloquer !') : 'Bientôt disponible';
+    } else {
+      pqCardEtat.textContent='Clique sur la pastille pour démarrer !';
+    }
+  }
 }
 
 function pqActiver(data, etat, div, isPermis){
@@ -664,11 +728,14 @@ function pqActiver(data, etat, div, isPermis){
   }
   if(etat==='verrou'){
     div.classList.remove('pq-secoue'); void div.offsetWidth; div.classList.add('pq-secoue');
-    pqToast(`🔒 Niveau ${data.lettre} arrive bientôt !`);
+    const idxV=PQ_NIVEAUX.findIndex(x=>x.id===data.id);
+    const prec=idxV>0 ? PQ_NIVEAUX[idxV-1].lettre : null;
+    pqToast(prec ? `🔒 Termine d'abord le niveau ${prec} !` : `🔒 Niveau ${data.lettre} arrive bientôt !`);
     return;
   }
   if(data.id==='A') lancerNiveauA();
   else if(data.id==='B') lancerNiveauB();
+  else if(data.id==='C') lancerNiveauC();
 }
 
 /* --- Musique de fond du parcours --- */
@@ -690,11 +757,40 @@ function musiqueStop(){ musiqueActive=false; if(musiqueAudio){ try{ musiqueAudio
 
 function ouvrirParcours(){
   if(window.NB && window.NB.stop) window.NB.stop();
+  if(window.NC && window.NC.stop) window.NC.stop();
   clearInactivite(); clearTempo(); sinonCourant=null;
   if(libreIv){ clearInterval(libreIv); libreIv=null; }
   if(papRaf){ cancelAnimationFrame(papRaf); papRaf=null; }
   if(window.speechSynthesis) speechSynthesis.cancel(); stopOral(); activerSuivi(false);
   renderParcours(); pqEl.classList.add('on'); musiqueStart(); musiqueDuck(false);
+  installerBoutonAdmin();
+}
+
+/* ===== Réinitialisation (encadrant) =====
+   Discret et présent uniquement sur la page d'accueil du parcours, pour qu'un enfant
+   ne tombe pas dessus en cours de partie. Le code est écrit dans ce fichier : il dissuade
+   un enfant curieux, ce n'est pas une sécurité au sens strict. */
+const ADMIN_CODE="kompa2026";
+function installerBoutonAdmin(){
+  if(!pqEl || document.getElementById('pqAdminBtn')) return;
+  const b=document.createElement('button');
+  b.id='pqAdminBtn'; b.type='button'; b.textContent='⚙';
+  b.title="Réinitialiser la progression (encadrant)";
+  b.setAttribute('aria-label',"Réinitialiser la progression (encadrant)");
+  b.style.cssText='position:absolute; left:10px; bottom:10px; z-index:40; width:34px; height:34px;'
+    +'border-radius:50%; border:2px solid #b9c6d6; background:#fff; color:#7d8a99; font-size:16px;'
+    +'line-height:1; cursor:pointer; opacity:.35; transition:opacity .2s ease; padding:0;';
+  b.addEventListener('mouseenter', ()=>{ b.style.opacity='1'; });
+  b.addEventListener('mouseleave', ()=>{ b.style.opacity='.35'; });
+  b.addEventListener('click', ()=>{
+    const saisie=prompt("Code encadrant pour réinitialiser la progression :");
+    if(saisie===null) return;                       // annulé
+    if(saisie!==ADMIN_CODE){ pqToast("Code incorrect."); return; }
+    if(!confirm("Effacer la progression et recommencer au niveau A ?")) return;
+    try{ localStorage.removeItem('permisNiveauxFaits'); }catch(e){}
+    renderParcours(); pqToast("Progression réinitialisée.");
+  });
+  pqEl.appendChild(b);
 }
 function debloqueAudio(){
   try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){}
@@ -712,7 +808,7 @@ const NB = (function(){
   const CFG = {
     titreNotion:"Le maintien du clic gauche",
     presentation:{
-      oral:"Re-bonjour les Kopains, c'est le Professeur Kompa ! Vous savez déjà déplacer le curseur et faire un petit clic bleu, alors aujourd'hui on passe au niveau au-dessus : on va apprendre à garder le bouton bleu appuyé. Le truc, c'est ça : on appuie, et on ne relâche pas, on garde le doigt enfoncé pendant qu'on bouge la main. Comme si on attrapait un objet pour le déplacer, puis qu'on le posait où on veut. Attention, le piège, c'est de lever le doigt trop tôt : l'objet vous échappe ! Prêts à devenir des pros de l'attrape-et-pose ?",
+      oral:"Re-bonjour les Kopains, c'est le Professeur Pile Poil ! Vous savez déjà déplacer le curseur et faire un petit clic bleu, alors aujourd'hui on passe au niveau au-dessus : on va apprendre à garder le bouton bleu appuyé. Le truc, c'est ça : on appuie, et on ne relâche pas, on garde le doigt enfoncé pendant qu'on bouge la main. Comme si on attrapait un objet pour le déplacer, puis qu'on le posait où on veut. Attention, le piège, c'est de lever le doigt trop tôt : l'objet vous échappe ! Prêts à devenir des pros de l'attrape-et-pose ?",
       ecran:"On garde le bouton bleu appuyé pour attraper et déplacer."
     },
     demo:{
@@ -750,8 +846,31 @@ const NB = (function(){
   const NB_VICTOIRE=[null,null,null];
   const nbAudioEl=new Audio(); nbAudioEl.preload='auto';
   const nbVicEl=new Audio(); nbVicEl.preload='auto';
-  function jouerB(i){ const src=NB_AUDIO[i]; if(!src||!sonOn) return; try{ nbAudioEl.pause(); nbAudioEl.currentTime=0; nbAudioEl.src=src; const p=nbAudioEl.play(); if(p&&p.catch) p.catch(()=>{}); }catch(e){} }
-  function jouerVictoireB(i){ const src=NB_VICTOIRE[i]; if(!src||!sonOn) return; try{ nbVicEl.pause(); nbVicEl.currentTime=0; nbVicEl.src=src; const p=nbVicEl.play(); if(p&&p.catch) p.catch(()=>{}); }catch(e){} }
+  function jouerB(i, onEnd){
+    const src=NB_AUDIO[i];
+    // Tant qu'aucun audio n'est fourni, on NE declenche PAS l'enchainement : la nav Prec./Suiv. reste la main.
+    if(!src||!sonOn) return;
+    try{
+      nbAudioEl.pause(); nbAudioEl.currentTime=0; nbAudioEl.onended=null;
+      nbAudioEl.src=src;
+      if(onEnd) nbAudioEl.onended=()=>onEnd();
+      const p=nbAudioEl.play();
+      if(p&&p.catch) p.catch(()=>{ if(onEnd) bTempo(1200, onEnd); });
+    }catch(e){ if(onEnd) bTempo(1200, onEnd); }
+  }
+  function jouerVictoireB(i, onEnd){
+    const src=NB_VICTOIRE[i];
+    if(!src||!sonOn) return;
+    try{
+      nbVicEl.pause(); nbVicEl.currentTime=0; nbVicEl.onended=null;
+      nbVicEl.src=src;
+      if(onEnd) nbVicEl.onended=()=>onEnd();
+      const p=nbVicEl.play();
+      if(p&&p.catch) p.catch(()=>{ if(onEnd) bTempo(1200, onEnd); });
+    }catch(e){ if(onEnd) bTempo(1200, onEnd); }
+  }
+  function bAudioPret(){ return NB_AUDIO.some(Boolean); }
+  function bSuite(){ if(bAudioPret()) bAllerA(bEtape+1); }
 
   let bEtape=0, bRaf=null, bTempoId=null;
   function mainEl(){ return document.getElementById('main'); }
@@ -837,6 +956,7 @@ const NB = (function(){
       let hx=300+(c.x-140)/520*200, hy=440+(c.y-48)/298*32;
       hx=Math.max(305,Math.min(495,hx)); hy=Math.max(442,Math.min(470,hy));
       handL.style.opacity = handOn?'1':'0';
+      pressClic(zoneB, '#005da8', handOn);   // le bouton bleu s'eclaire tant qu'il est maintenu enfonce
       handR.setAttribute('transform',`translate(${hx-33},${hy})`);
       cursor.setAttribute('transform',`translate(${c.x-9},${c.y-6})`);
       cargo.setAttribute('x', o.x-20); cargo.setAttribute('y', o.y+34);
@@ -912,7 +1032,7 @@ const NB = (function(){
         done=true; pap.dataset.tenu=''; pap.classList.remove('tenu');
         majProgB(2,true); if(typeof bipOk==='function') bipOk();
         const w=document.getElementById('mb1Win'); if(w) w.classList.add('show');
-        jouerVictoireB(0);
+        jouerVictoireB(0, bSuite);
       }
     });
     const relacher=()=>{ pap.dataset.tenu=''; pap.classList.remove('tenu'); };
@@ -945,7 +1065,7 @@ const NB = (function(){
       if(pct>=100){
         done=true; majProgB(3,true); if(typeof bipOk==='function') bipOk();
         const w=document.getElementById('mb2Win'); if(w) w.classList.add('show');
-        jouerVictoireB(1);
+        jouerVictoireB(1, bSuite);
         return;
       }
       bRaf=requestAnimationFrame(loop);
@@ -1009,7 +1129,7 @@ const NB = (function(){
             done=true; majProgB(4); if(typeof bipOk==='function') bipOk();
             table.style.backgroundImage=`url('${window.__resources.presentoirFinal}')`; fil.style.display='none';
             const w=document.getElementById('mb3Win'); setTimeout(()=>{ if(w) w.classList.add('show'); }, 500);
-            jouerVictoireB(2);
+            jouerVictoireB(2, bSuite);
           }
         } else {
           el.classList.add('animating');
@@ -1074,6 +1194,698 @@ window.NB = NB;
 function lancerNiveauB(){ if(window.NB) window.NB.lancer(); }
 /* =================== FIN NIVEAU B =================== */
 
+/* ===================== NIVEAU C (intégré, module isolé) — v3 (retours intégrés) ===================== */
+const NC = (function(){
+  const CFG = {
+    titreNotion:"Le clic droit et le défilement à deux doigts",
+    presentation:{
+      oral:"Re-bonjour les Kopains, c'est le Professeur Pile Poil ! Vous vous souvenez, je vous avais dit que le clic droit aurait son heure de gloire plus tard ? Eh bien... la voici ! Un clic droit ouvre un petit menu avec plusieurs choix écrits. À vous de cliquer sur le bon avec un clic gauche, comme d'habitude. Le clic gauche choisit, le clic droit propose, les deux travaillent ensemble !",
+      ecran:"Un clic droit ouvre un menu.\nUn clic gauche permet ensuite de choisir dedans."
+    },
+    phaseTest:{
+      oral:"Pour s'échauffer, voici un petit coffre à bonbons. Posez le curseur dessus et faites un clic droit : un menu va s'ouvrir avec plusieurs choses écrites dedans. Choisissez l'option « Ouvrir » avec un clic gauche, et régalez-vous !",
+      ecran:"Fais un clic droit, puis choisis l'option « Ouvrir » avec un clic gauche.",
+      reussi:"Miam, plein de bonbons ! Vous savez ouvrir un menu et choisir dedans, en avant pour la suite !",
+      ratéFermer:"Oh, le coffre reste fermé... Refais un clic droit et choisis cette fois l'option « Ouvrir » !",
+      ratéSupprimer:"Non, il ne faut surtout pas supprimer le coffre à bonbons ! Refais un clic droit et choisis l'option « Ouvrir »."
+    },
+    mission1:{
+      titre:"Le menu du Lapin Blanc",
+      consigne:"Regarde, le Lapin Blanc traverse le jardin en courant, il a l'air terriblement pressé ! Vite, pose le curseur sur lui avant qu'il ne disparaisse, et fais un clic droit : un menu avec trois mots va s'ouvrir. Choisis l'option « Suivre le Lapin » avec un clic gauche pour te lancer à sa poursuite dans le terrier !",
+      ecran:"Fais un clic droit sur le Lapin, puis choisis l'option « Suivre le Lapin ».",
+      reussi:"Et hop, vous voilà sur les talons du Lapin, direction le terrier ! Vous avez ouvert le menu et fait le bon choix, bravo !",
+      raté:"Hmm, ce n'était pas ça... le Lapin est toujours pressé, refais un clic droit sur lui et choisis bien l'option « Suivre le Lapin »."
+    },
+    mission2:{
+      titre:"Le tri des cartes-soldats",
+      consigne:"Toute la garde de la Reine de Cœur est alignée devant toi, et chaque carte-soldat attend ses ordres ! Fais un clic droit sur chacune, regarde bien sa posture, et choisis l'option « Garde » ou l'option « Repos » selon ce que tu vois. Il faut toutes les traiter pour que la Reine soit satisfaite !",
+      ecran:"Fais un clic droit sur chaque carte, puis choisis l'option qui correspond.",
+      reussi:"Parfait, chaque carte a reçu le bon ordre, la garde de la Reine est fière de vous !"
+    },
+    presentationScroll:{
+      oral:"Bravo les Kompagnons ! Il vous reste un dernier geste à apprendre : le défilement à deux doigts. Posez deux doigts côte à côte sur le trackpad et glissez-les ensemble vers le bas : le décor défile comme un long parchemin qui se déroule ! Glissez-les vers le haut pour remonter.",
+      ecran:"Pose deux doigts sur le trackpad et glisse-les pour faire défiler l'écran."
+    },
+    mission3a:{
+      titre:"Le couloir sans fin du Chat du Cheshire",
+      consigne:"En suivant le Lapin, tu es tombé dans un looong couloir qui n'en finit pas... et le Chat du Cheshire adore justement s'y cacher ! Fais défiler avec deux doigts jusqu'à l'apercevoir, et clique dessus, prends ton temps, il ne bougera pas !",
+      ecran:"Fais défiler avec deux doigts et clique sur le Chat quand tu le vois.",
+      reussi:"Vous l'avez trouvé ! Le Chat vous indique la sortie du couloir, en avant vers le jardin !"
+    },
+    mission4:{
+      titre:"Le coffre-fort final",
+      consigne:"En sortant du couloir, tu débouches dans le grand jardin du Pays des Merveilles, et un vrai trésor s'y cache quelque part ! Fais défiler avec deux doigts pour explorer. Ramasse les pièces qui traînent, ouvre les coffres que tu croises, et pour chaque buisson : clic droit, puis choisis bien l'option « Ouvrir » ou l'option « Supprimer », attention, un buisson, ça ne s'ouvre pas !",
+      ecran:"Fais défiler le jardin, ramasse les pièces, et clic droit sur les coffres et les buissons.",
+      reussi:"INCROYABLE ! Vous avez trouvé le trésor et vous êtes de vrais champions du trackpad !",
+      ratéBuisson:"Un buisson, ça ne s'ouvre pas ! Regarde bien avant de choisir : « Ouvrir » ou « Supprimer » ?",
+      ratéCoffre:"Ce n'est pas un buisson, celui-là, c'est un coffre ! Choisis plutôt l'option « Ouvrir ».",
+      ratéCoffreFinal:"Presque ! Ce trésor-là, il faut l'« Ouvrir », pas le supprimer !"
+    },
+    badge:{
+      oral:"Et... badge débloqué ! Vous maîtrisez maintenant le clic droit pour ouvrir des menus, et le défilement à deux doigts pour explorer un décor tout entier. Le vrai trésor est trouvé, et avec lui... le Permis du Trackpad tout entier ! Vous savez déplacer, cliquer, maintenir-glisser, faire un clic droit et faire défiler à deux doigts. Bravo à tous les Kompagnons, vous êtes prêts pour le premier atelier de codage !",
+      ecran:"Badge débloqué : clic droit et défilement à deux doigts maîtrisés !\n\n🏅 Permis du Trackpad obtenu, prochaine étape : le premier atelier de codage !"
+    }
+  };
+
+  /* Voix off (mp3) — squelette en attente des fichiers réels. */
+  const NC_AUDIO=[null,null,null,null,null,null,null,null];
+  const NC_VICTOIRE=[null,null,null,null];
+  const ncAudioEl=new Audio(); ncAudioEl.preload='auto';
+  const ncVicEl=new Audio(); ncVicEl.preload='auto';
+  function jouerC(i, onEnd){
+    const src=NC_AUDIO[i];
+    // Tant qu'aucun audio n'est fourni, on NE declenche PAS l'enchainement : la nav Prec./Suiv. reste la main.
+    if(!src||!sonOn) return;
+    try{
+      ncAudioEl.pause(); ncAudioEl.currentTime=0; ncAudioEl.onended=null;
+      ncAudioEl.src=src;
+      if(onEnd) ncAudioEl.onended=()=>onEnd();
+      const p=ncAudioEl.play();
+      if(p&&p.catch) p.catch(()=>{ if(onEnd) cTempo(1200, onEnd); });
+    }catch(e){ if(onEnd) cTempo(1200, onEnd); }
+  }
+  function jouerVictoireC(i, onEnd){
+    const src=NC_VICTOIRE[i];
+    if(!src||!sonOn) return;
+    try{
+      ncVicEl.pause(); ncVicEl.currentTime=0; ncVicEl.onended=null;
+      ncVicEl.src=src;
+      if(onEnd) ncVicEl.onended=()=>onEnd();
+      const p=ncVicEl.play();
+      if(p&&p.catch) p.catch(()=>{ if(onEnd) cTempo(1200, onEnd); });
+    }catch(e){ if(onEnd) cTempo(1200, onEnd); }
+  }
+  /* Les voix off ne sont pas encore fournies : tant que NC_AUDIO est vide, la nav Prec./Suiv. reste
+     affichee et pilote le passage d'une slide a l'autre. Des qu'un audio est renseigne, l'enchainement
+     devient automatique (comme au niveau A) et la nav disparait. */
+  function cAudioPret(){ return NC_AUDIO.some(Boolean); }
+  function cSuite(){ if(cAudioPret()) allerCA(cEtape+1); }
+
+  let cEtape=0, cRaf=null, cTempoId=null, cTempoId2=null, ncOverlayResize=null;
+  function mainEl(){ return document.getElementById('main'); }
+  function clearC(){
+    if(cRaf){cancelAnimationFrame(cRaf);cRaf=null;} if(cTempoId){clearTimeout(cTempoId);cTempoId=null;} if(cTempoId2){clearTimeout(cTempoId2);cTempoId2=null;}
+    if(window.lapRaf){cancelAnimationFrame(window.lapRaf); window.lapRaf=null;} fermerMenuC();
+    if(ncOverlayResize){ window.removeEventListener('resize', ncOverlayResize); ncOverlayResize=null; }
+    const vid=document.getElementById('mcScrollVideo'); if(vid){ try{ vid.pause(); }catch(_){} }
+    ['__ncPresIv','__ncScrollIv','__ncDemoChain'].forEach(k=>{ if(window[k]){ clearInterval(window[k]); clearTimeout(window[k]); window[k]=null; } });
+  }
+  function cTempo(ms,fn){ if(cTempoId)clearTimeout(cTempoId); cTempoId=setTimeout(fn,ms); }
+  function majProgC(n, active){
+    setProgress(n, active);
+    const l=document.getElementById('progLabel'); if(l){ l.textContent='NIVEAU C'; l.style.color='#4A4A4A'; }
+    // Le niveau C compte 4 missions (comme le niveau A) : les 4 pastilles restent visibles.
+    const n4=document.querySelector('#steps .snode[data-i="4"]'); if(n4) n4.style.display='';
+  }
+
+  /* ===== Décor de scène : remplace le damier par un fond doux + quelques assets existants dispersés ===== */
+  const DECORS = {
+    bonbons:[
+      {src:()=>window.__resources.lantRoseOn, style:'left:6%; top:14%; width:80px; transform:rotate(-8deg)'},
+      {src:()=>window.__resources.lantOrangeOn, style:'right:8%; top:10%; width:70px; transform:rotate(6deg)'},
+      {src:()=>window.__resources.papillonLow, style:'left:10%; bottom:12%; width:60px'},
+      {src:()=>window.__resources.itemCupcake, style:'right:10%; bottom:16%; width:70px'}
+    ],
+    lapin:[
+      {src:()=>window.__resources.porteFlamantImg, style:'left:4%; top:8%; width:110px'},
+      {src:()=>window.__resources.lantVertOn, style:'right:6%; top:16%; width:70px'},
+      {src:()=>window.__resources.papillonLow, style:'right:12%; bottom:10%; width:56px'},
+      {src:()=>window.__resources.itemMontre, style:'left:9%; bottom:14%; width:60px'}
+    ],
+    cartes:[
+      {src:()=>window.__resources.porteChapelierImg, style:'left:4%; top:6%; width:120px'},
+      {src:()=>window.__resources.lantBleuOn, style:'right:6%; top:12%; width:70px'},
+      {src:()=>window.__resources.lantRoseOn, style:'left:8%; bottom:10%; width:64px'},
+      {src:()=>window.__resources.itemTasse, style:'right:10%; bottom:14%; width:60px'}
+    ]
+  };
+  function decorScene(kind){
+    const items=DECORS[kind]||[];
+    const imgs=items.map(it=>`<img class="mc-decor-item" src="${it.src()}" alt="" style="${it.style}">`).join('');
+    return `<div class="mc-decor-scene">${imgs}</div>`;
+  }
+
+  /* ===== Menu contextuel simulé : clic droit -> options (icône image OU emoji + texte) -> clic gauche pour choisir ===== */
+  let menuActif=null;
+  function fermerMenuC(){ if(menuActif){ menuActif.remove(); menuActif=null; } document.removeEventListener('click', fermerMenuAuClicExterieur, true); }
+  function fermerMenuAuClicExterieur(e){ if(menuActif && !menuActif.contains(e.target)){ fermerMenuC(); } }
+  function ouvrirMenuC(x, y, options, onChoisir){
+    fermerMenuC();
+    const menu=document.createElement('div'); menu.className='mc-menu';
+    const vx=Math.min(x, window.innerWidth-210), vy=Math.min(y, window.innerHeight-16-options.length*46);
+    menu.style.left=vx+'px'; menu.style.top=vy+'px';
+    options.forEach(opt=>{
+      const b=document.createElement('button'); b.type='button';
+      const ic = opt.img ? `<img class="mc-menu-ic" src="${opt.img}" alt="">` : (opt.emoji ? `<span class="mc-menu-ic" style="font-size:20px; line-height:1">${opt.emoji}</span>` : '');
+      b.innerHTML = ic + `<span>${opt.label}</span>`;
+      b.addEventListener('click', ev=>{ ev.stopPropagation(); fermerMenuC(); onChoisir(opt.id); });
+      menu.appendChild(b);
+    });
+    document.body.appendChild(menu); menuActif=menu;
+    setTimeout(()=>document.addEventListener('click', fermerMenuAuClicExterieur, true), 0);
+  }
+  /* petit texte flottant de gain (pièces d'or) */
+  function gainVole(texte, x, y){
+    const g=document.createElement('div'); g.className='mc-gain-vole'; g.textContent=texte;
+    g.style.left=x+'px'; g.style.top=y+'px'; document.body.appendChild(g);
+    setTimeout(()=>g.remove(), 1050);
+  }
+
+  /* ===== Calage précis de l'overlay HTML sur l'écran dessiné du laptop SVG =====
+     L'écran occupe le rectangle x=140,y=48,w=520,h=298 dans le viewBox 800x720 du SVG.
+     On recalcule sa position/taille réelles en pixels (au lieu de % fixes sur .lap-wrap,
+     qui ne correspondent pas toujours au rendu réel du SVG selon la taille de l'écran)
+     pour que la fenêtre/vidéo Scratch restent toujours bien à l'intérieur de l'écran du laptop. */
+  const ECRAN_VB={ x:140, y:48, w:520, h:298 };
+  function ajusterOverlayEcran(lapWrap, svg, overlay){
+    const wrapRect=lapWrap.getBoundingClientRect(), svgRect=svg.getBoundingClientRect();
+    const echelle=svgRect.width/800;
+    overlay.style.left=((svgRect.left-wrapRect.left)+ECRAN_VB.x*echelle)+'px';
+    overlay.style.top=((svgRect.top-wrapRect.top)+ECRAN_VB.y*echelle)+'px';
+    overlay.style.width=(ECRAN_VB.w*echelle)+'px';
+    overlay.style.height=(ECRAN_VB.h*echelle)+'px';
+  }
+
+  /* ===== Démo "ordinateur" réutilisable : main qui clique-droit OU deux doigts qui défilent, sur un vrai laptop ===== */
+  function demoOrdinateur(mode){ // mode: 'clicDroit' | 'deuxDoigts'
+    const svg=mainEl().querySelector('.lap-svg');
+    const hand=svg.querySelector('#lapHand'), cursor=svg.querySelector('#lapCursor');
+    if(window.lapRaf) cancelAnimationFrame(window.lapRaf);
+    const lapWrap=mainEl().querySelector('.lap-wrap'); lapWrap.style.position='relative';
+    // overlay HTML calé précisément sur l'écran du laptop (zone blanche du SVG), recalculé au redimensionnement
+    const overlay=document.createElement('div'); overlay.className='mc-lap-screen-overlay';
+    lapWrap.appendChild(overlay);
+    ajusterOverlayEcran(lapWrap, svg, overlay);
+    if(ncOverlayResize) window.removeEventListener('resize', ncOverlayResize);
+    ncOverlayResize=()=>ajusterOverlayEcran(lapWrap, svg, overlay);
+    window.addEventListener('resize', ncOverlayResize);
+
+    const menuHTML=`<div class="mc-demo-menu" id="mcDemoMenu" style="left:60%; top:54%; z-index:3"><div>🍬 Ouvrir</div><div>📋 Copier</div><div>📄 Coller</div></div>`;
+    overlay.insertAdjacentHTML('beforeend', menuHTML);
+    const demoMenu=document.getElementById('mcDemoMenu');
+
+    if(mode==='clicDroit'){
+      hand.setAttribute('href', window.__resources.doigtDroit); hand.setAttribute('width','66'); hand.setAttribute('height','82');
+      hand.setAttribute('transform','translate(400,440)');
+      // Zone bleue (clic gauche, pour choisir dans le menu) + zone orange (clic droit, pour ouvrir le menu) — même code couleur que le Niveau B
+      const zoneB=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      zoneB.setAttribute('x','300'); zoneB.setAttribute('y','472'); zoneB.setAttribute('width','100'); zoneB.setAttribute('height','14'); zoneB.setAttribute('fill','#005da8');
+      svg.insertBefore(zoneB, hand);
+      const zoneO=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      zoneO.setAttribute('x','400'); zoneO.setAttribute('y','472'); zoneO.setAttribute('width','100'); zoneO.setAttribute('height','14'); zoneO.setAttribute('fill','#f88639');
+      svg.insertBefore(zoneO, hand);
+      const divH=document.createElementNS('http://www.w3.org/2000/svg','line');
+      divH.setAttribute('x1','300'); divH.setAttribute('y1','472'); divH.setAttribute('x2','500'); divH.setAttribute('y2','472'); divH.setAttribute('stroke','#111111'); divH.setAttribute('stroke-width','2');
+      svg.insertBefore(divH, hand);
+      const divV=document.createElementNS('http://www.w3.org/2000/svg','line');
+      divV.setAttribute('x1','400'); divV.setAttribute('y1','472'); divV.setAttribute('x2','400'); divV.setAttribute('y2','486'); divV.setAttribute('stroke','#111111'); divV.setAttribute('stroke-width','2');
+      svg.insertBefore(divV, hand);
+      // Bureau Windows (avec l'icône Scratch déjà dessus, S bien visible) posé sur l'écran + fenêtre (cachée au départ, légèrement réduite pour bien rester dans l'écran)
+      overlay.insertAdjacentHTML('beforeend', `
+        <img id="mcAppIcon" src="${window.__resources.bureauScratchImg}" alt="Bureau avec l'icône Scratch" style="position:absolute; inset:0; width:100%; height:100%; object-fit:fill; transition:opacity .3s ease; z-index:1">
+        <img id="mcAppWindow" src="${window.__resources.scratchFenetreImg}" alt="Fenêtre Scratch" style="position:absolute; left:2%; top:2%; width:96%; height:96%; object-fit:fill; opacity:0; transition:opacity .4s ease; z-index:2">
+      `);
+      demoMenu.style.left='21%'; demoMenu.style.top='3%';
+      const icon=document.getElementById('mcAppIcon'), fenetre=document.getElementById('mcAppWindow');
+      // Le curseur du SVG serait masqué par l'icône/la fenêtre HTML posées par-dessus : on le remplace ici
+      // par un curseur HTML, ajouté en dernier dans l'overlay pour rester visible au-dessus de tout.
+      cursor.style.opacity='0';
+      const curseurHTML=document.createElement('img'); curseurHTML.src=CURSOR_SRC; curseurHTML.alt='';
+      curseurHTML.style.cssText='position:absolute; width:4%; height:auto; pointer-events:none; z-index:4;';
+      overlay.appendChild(curseurHTML);
+      // La pointe de la flèche est en haut à gauche de l'image : on décale pour qu'elle tombe pile sur la cible.
+      const placerCurseur=(xPct,yPct)=>{ curseurHTML.style.left=(xPct-0.9)+'%'; curseurHTML.style.top=(yPct-1.2)+'%'; };
+      // Position (en % de l'écran) de l'icône Scratch telle que dessinée dans assets/images/bureauScratchImg.png
+      const posIcone=()=>({ x:13.99, y:7.25 });
+      // Position (en % de l'écran) du centre d'une des trois options du menu
+      const posOption=(i)=>{
+        const o=overlay.getBoundingClientRect(), r=demoMenu.children[i].getBoundingClientRect();
+        return { x:((r.left-o.left)+r.width*0.30)/o.width*100, y:((r.top-o.top)+r.height/2)/o.height*100 };
+      };
+      // Surlignage de l'option survolée : montre visuellement qu'on a le choix entre les trois
+      const surligner=(i)=>{
+        Array.from(demoMenu.children).forEach((el,k)=>{
+          el.style.background = (k===i) ? 'rgba(248,134,57,.28)' : 'transparent';
+          el.style.borderRadius='5px';
+        });
+      };
+      const repos={x:6,y:58};
+      // Fait glisser le doigt droit sur la partie BLANCHE du trackpad (au-dessus des zones colorées), en suivant
+      // proportionnellement la position du curseur à l'écran — même principe de correspondance que le Niveau B.
+      const doigtSurTrackpad=(pct)=>{
+        const hx=Math.max(300,Math.min(430, 300+pct.x*2));
+        const hy=Math.max(442,Math.min(468, 440+pct.y*0.32));
+        hand.setAttribute('transform', `translate(${hx},${hy})`);
+      };
+      /* Déplace le curseur (et le doigt, qui est ce qui le fait bouger) d'un point à un autre.
+         `surlignage` = index de l'option à mettre en évidence DÈS l'arrivée du curseur (-1 = aucune),
+         puis on marque une pause avant d'enchaîner, pour laisser le temps de voir. */
+      let posCourante={...repos};
+      const deplacer=(vers, duree, pause, apres, surlignage)=>{
+        const de={...posCourante}, t0=performance.now();
+        const pas=(now)=>{
+          if(current.kind!=='presentationC') return;
+          const p=Math.min(1,(now-t0)/duree), e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+          const px=de.x+(vers.x-de.x)*e, py=de.y+(vers.y-de.y)*e;
+          placerCurseur(px,py); doigtSurTrackpad({x:px,y:py});
+          if(p<1){ window.lapRaf=requestAnimationFrame(pas); }
+          else {
+            posCourante={...vers};
+            if(surlignage!==undefined) surligner(surlignage);
+            if(apres) window.__ncDemoChain=setTimeout(apres, pause);
+          }
+        };
+        window.lapRaf=requestAnimationFrame(pas);
+      };
+      placerCurseur(repos.x, repos.y); doigtSurTrackpad(repos);
+      const sequence=()=>{
+        if(current.kind!=='presentationC') return;
+        // 1) retour à l'état de repos (doigt droit, prêt à glisser) — on restaure son gabarit
+        hand.setAttribute('href', window.__resources.doigtDroit);
+        hand.setAttribute('width','66'); hand.setAttribute('height','82');
+        zoneB.setAttribute('fill','#005da8'); zoneO.setAttribute('fill','#f88639');
+        demoMenu.classList.remove('show'); surligner(-1);
+        fenetre.style.opacity='0'; icon.style.opacity='1';
+        posCourante={...repos}; placerCurseur(repos.x, repos.y); doigtSurTrackpad(repos);
+        window.__ncDemoChain=setTimeout(()=>{
+          if(current.kind!=='presentationC') return;
+          // 2) le curseur ET le doigt glissent ensemble jusqu'à l'icône Scratch
+          deplacer(posIcone(), 1100, 900, ()=>{
+            // 3) le doigt droit descend sur le bouton droit (zone orange) : clic droit -> le menu s'ouvre
+            hand.setAttribute('transform','translate(417,472)'); flashClic(zoneO,'#f88639');
+            if(typeof bipClic==='function') bipClic();
+            window.__ncDemoChain=setTimeout(()=>{
+              if(current.kind!=='presentationC') return;
+              demoMenu.classList.add('show');
+              // 4) on laisse le menu s'afficher, puis le curseur passe sur les TROIS options pour montrer le choix
+              window.__ncDemoChain=setTimeout(()=>{
+                if(current.kind!=='presentationC') return;
+                deplacer(posOption(0), 900, 800, ()=>{
+                  deplacer(posOption(1), 700, 800, ()=>{
+                    deplacer(posOption(2), 700, 800, ()=>{
+                      // 5) retour sur « Ouvrir », le bon choix
+                      deplacer(posOption(0), 800, 900, ()=>{
+                        if(current.kind!=='presentationC') return;
+                        // 6) le doigt gauche vient cliquer sur le bouton gauche (zone bleue) pour valider « Ouvrir ».
+                        //    Meme gabarit et meme calage qu'au niveau B, sinon le doigt reste a cote de la zone.
+                        hand.setAttribute('href', window.__resources.doigtGauche);
+                        hand.setAttribute('width','42'); hand.setAttribute('height','52');
+                        hand.setAttribute('transform','translate(329,455)');
+                        window.__ncDemoChain=setTimeout(()=>{
+                          if(current.kind!=='presentationC') return;
+                          hand.setAttribute('transform','translate(329,472)'); flashClic(zoneB,'#005da8');
+                          if(typeof bipClic==='function') bipClic();
+                          window.__ncDemoChain=setTimeout(()=>{
+                            if(current.kind!=='presentationC') return;
+                            // 7) « Ouvrir » choisi : le menu se ferme, la fenêtre Scratch s'ouvre
+                            demoMenu.classList.remove('show'); surligner(-1);
+                            icon.style.opacity='0'; fenetre.style.opacity='1'; if(typeof bipOk==='function') bipOk();
+                            window.__ncDemoChain=setTimeout(sequence, 3200);
+                          }, 400);
+                        }, 700);
+                      }, 0);
+                    }, 2);
+                  }, 1);
+                }, 0);
+              }, 900);
+            }, 300);
+          });
+        }, 900);
+      };
+      sequence();
+    } else {
+      hand.setAttribute('href', window.__resources.deuxDoigtsScrollImg); hand.setAttribute('width','60'); hand.setAttribute('height','75');
+      demoMenu.remove();
+      // La vidéo Scratch illustre ici un vrai exemple de défilement (dans les blocs / la fenêtre de code), légèrement réduite pour bien rester dans l'écran du laptop
+      overlay.insertAdjacentHTML('beforeend', `<video id="mcScrollVideo" src="${window.__resources.scratchDemoVideo}" muted loop autoplay playsinline preload="auto" style="position:absolute; left:2%; top:2%; width:96%; height:96%; object-fit:fill"></video>`);
+      const vid=document.getElementById('mcScrollVideo');
+      try{ const p=vid.play(); if(p&&p.catch) p.catch(()=>{}); }catch(_){}
+      const t0=performance.now();
+      const anim=(now)=>{
+        if(current.kind!=='presentationScrollC') return;
+        const t=(now-t0)/1000, y=6*Math.sin(t*1.3);
+        hand.setAttribute('transform',`translate(${400-30},${450+y*3})`);
+        window.lapRaf=requestAnimationFrame(anim);
+      };
+      window.lapRaf=requestAnimationFrame(anim);
+    }
+  }
+
+  /* ===== Écran 1 — Présentation du clic droit : format ordinateur, séquencé (clic PUIS menu) ===== */
+  function cPresentation(){
+    current={kind:'presentationC'}; majProgC(0);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active lap2">
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; top:44px; white-space:pre-line">${CFG.presentation.ecran}</div>
+      <div class="lap-wrap">${laptopSVG()}</div>
+    </div>`;
+    demoOrdinateur('clicDroit');
+    jouerC(0, cSuite);
+  }
+
+  /* ===== Écran 2 — Phase de test : le Coffre à Bonbons (3 options, une seule correcte) ===== */
+  function cPhaseTest(){
+    current={kind:'phaseTestC'}; majProgC(0, true);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active" style="display:flex; flex-direction:column; height:100%; min-height:0; overflow:hidden; position:relative">
+      ${decorScene('bonbons')}
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; top:44px; margin-bottom:2vh; align-self:center; white-space:pre-line">${CFG.phaseTest.ecran}</div>
+      <div style="flex:1; display:flex; align-items:center; justify-content:center">
+        <img id="mcBonbons" src="${window.__resources.coffreBonbonsImg}" alt="coffre à bonbons" style="width:min(26vw,200px); cursor:pointer; filter:drop-shadow(6px 8px 0 rgba(0,0,0,.15))">
+      </div>
+      <div class="m1-win" id="mcPTWin"><div class="m1-win-card"><div class="m1-win-t">Bravo, super !</div><div class="m1-win-s">${CFG.phaseTest.reussi}</div></div></div>
+    </div>`;
+    const coffre=document.getElementById('mcBonbons'), consBox=document.getElementById('ecranBox');
+    let done=false;
+    coffre.addEventListener('contextmenu', e=>{
+      e.preventDefault(); if(done)return;
+      ouvrirMenuC(e.clientX, e.clientY, [
+        {id:'ouvrir', label:'Ouvrir', emoji:'🍬'},
+        {id:'fermer', label:'Fermer', img:window.__resources.iconFermerImg},
+        {id:'supprimer', label:'Supprimer', img:window.__resources.iconSupprimerImg}
+      ], id=>{
+        if(id==='ouvrir'){
+          done=true; if(typeof bipOk==='function') bipOk(); majProgC(1, true);
+          const w=document.getElementById('mcPTWin'); if(w) w.classList.add('show');
+          jouerVictoireC(0, cSuite);
+        } else {
+          if(typeof bipNon==='function') bipNon();
+          consBox.textContent = id==='fermer' ? CFG.phaseTest.ratéFermer : CFG.phaseTest.ratéSupprimer;
+          consBox.classList.add('cons-alt');
+          cTempo(1600, ()=>{ consBox.textContent=CFG.phaseTest.ecran; consBox.classList.remove('cons-alt'); });
+        }
+      });
+    });
+    jouerC(1);
+  }
+
+  /* ===== Mission 1 — le Lapin Blanc : clic droit -> 3 options (icône + texte), version narrative ===== */
+  function cMission1(){
+    current={kind:'mission1C'}; majProgC(1, true);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active" style="display:flex; flex-direction:column; height:100%; min-height:0; overflow:hidden; position:relative">
+      ${decorScene('lapin')}
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; top:44px; margin-bottom:2vh; align-self:center; white-space:pre-line">${CFG.mission1.ecran}</div>
+      <div style="flex:1; display:flex; align-items:center; justify-content:center">
+        <img id="mcLapin" src="${window.__resources.lapinBlancImg}" alt="Lapin Blanc" style="width:min(24vw,190px); cursor:pointer; filter:drop-shadow(6px 8px 0 rgba(0,0,0,.15)); transition:transform .18s ease">
+      </div>
+      <div class="m1-win" id="mc1Win"><div class="m1-win-card"><div class="m1-win-t">Bravo, super !</div><div class="m1-win-s">${CFG.mission1.reussi}</div></div></div>
+    </div>`;
+    const lapin=document.getElementById('mcLapin'), consBox=document.getElementById('ecranBox');
+    let done=false;
+    lapin.addEventListener('mouseenter', ()=>{ if(!done) lapin.style.transform='translateY(-6px)'; });
+    lapin.addEventListener('mouseleave', ()=>{ lapin.style.transform='translateY(0)'; });
+    lapin.addEventListener('contextmenu', e=>{
+      e.preventDefault(); if(done)return;
+      ouvrirMenuC(e.clientX, e.clientY, [
+        {id:'suivre', label:'Suivre le Lapin', img:window.__resources.iconSuivreImg},
+        {id:'sieste', label:'Faire la sieste', img:window.__resources.iconSiesteImg},
+        {id:'carotte', label:'Manger une carotte', img:window.__resources.iconCarotteImg}
+      ], id=>{
+        if(id==='suivre'){
+          done=true; if(typeof bipOk==='function') bipOk(); majProgC(2, true);
+          const w=document.getElementById('mc1Win'); if(w) w.classList.add('show');
+          jouerVictoireC(1, cSuite);
+        } else {
+          if(typeof bipNon==='function') bipNon();
+          consBox.textContent=CFG.mission1.raté; consBox.classList.add('cons-alt');
+          cTempo(1600, ()=>{ consBox.textContent=CFG.mission1.ecran; consBox.classList.remove('cons-alt'); });
+        }
+      });
+    });
+    jouerC(2);
+  }
+
+  /* ===== Mission 2 — le tri des cartes-soldats : PLUSIEURS cartes en même temps, toutes à traiter ===== */
+  function cMission2(){
+    current={kind:'mission2C'}; majProgC(2, true);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active" style="display:flex; flex-direction:column; height:100%; min-height:0; overflow:hidden; position:relative">
+      ${decorScene('cartes')}
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; top:44px; margin-bottom:2vh; align-self:center; white-space:pre-line">${CFG.mission2.ecran}</div>
+      <div class="mc-cartes-scene" id="mcScene" style="flex:1; gap:2.4vw"></div>
+      <div class="mc-cartes-msg" id="mcMsg"></div>
+      <div class="m1-win" id="mc2Win"><div class="m1-win-card"><div class="m1-win-t">Bravo, super !</div><div class="m1-win-s">${CFG.mission2.reussi}</div></div></div>
+    </div>`;
+    const scene=document.getElementById('mcScene'), msg=document.getElementById('mcMsg');
+    const BESOIN=5; let restantes=BESOIN, done=false;
+    for(let i=0;i<BESOIN;i++){
+      const etat=Math.random()<0.5?'garde':'repos';
+      const img=document.createElement('img');
+      img.className='mc-carte'+(etat==='repos'?' avachie':''); img.dataset.etat=etat;
+      img.src = etat==='garde' ? window.__resources.carteGardeImg : window.__resources.carteReposImg;
+      img.alt='carte-soldat'; img.style.width='min(18vw,150px)';
+      scene.appendChild(img);
+      img.addEventListener('contextmenu', e=>{
+        e.preventDefault(); if(done||img.classList.contains('sortie'))return;
+        ouvrirMenuC(e.clientX, e.clientY, [ {id:'garde', label:'Garde', emoji:'🛡️'}, {id:'repos', label:'Repos', emoji:'💤'} ], choix=>{
+          if(choix===img.dataset.etat){
+            if(typeof bipClic==='function') bipClic();
+            img.classList.add('sortie'); restantes--;
+            msg.textContent = restantes===0?'Toutes traitées !' : (restantes===1?'Encore une !':'Bien vu, suivante !');
+            msg.classList.add('show'); setTimeout(()=>msg.classList.remove('show'), 1000);
+            if(restantes<=0){
+              done=true; majProgC(3, true); if(typeof bipOk==='function') bipOk();
+              const w=document.getElementById('mc2Win'); setTimeout(()=>{ if(w) w.classList.add('show'); }, 500);
+              jouerVictoireC(2, cSuite);
+            }
+          } else { if(typeof bipNon==='function') bipNon(); }
+        });
+      });
+    }
+    jouerC(3);
+  }
+
+  /* ===== Écran 5 — Présentation du défilement à deux doigts : format ordinateur ===== */
+  function cPresentationScroll(){
+    current={kind:'presentationScrollC'}; majProgC(3);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active lap2">
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; top:44px; white-space:pre-line">${CFG.presentationScroll.ecran}</div>
+      <div class="lap-wrap">${laptopSVG()}</div>
+    </div>`;
+    demoOrdinateur('deuxDoigts');
+    jouerC(4, cSuite);
+  }
+
+  /* ===== Objets décoratifs qui défilent dans le couloir (décor uniquement, seul le Chat est cliquable) ===== */
+  const COULOIR_DECOR=['papillonLow','lantRoseOn','lantBleuOn','itemTasse','itemGateau','itemCle'];
+  function couloirDecorHTML(hauteur, evitZone){
+    let html='', y=160, i=0;
+    while(y<hauteur-140){
+      if(!evitZone || Math.abs(y-evitZone)>220){
+        const key=COULOIR_DECOR[i%COULOIR_DECOR.length];
+        const x=22+((i*37)%56);
+        html+=`<img class="mc-couloir-item" src="${window.__resources[key]}" alt="" style="top:${y}px; left:${x}%; width:${44+((i*13)%18)}px">`;
+      }
+      y+=260; i++;
+    }
+    return html;
+  }
+
+  /* ===== Mission 3A — couloir libre, sans chrono, réussite garantie ===== */
+  function cMission3A(){
+    current={kind:'mission3aC'}; majProgC(3, true);
+    activerSuivi(false); cacheKompa();
+    const HAUTEUR=1500;
+    mainEl().innerHTML=`<div class="screen active" style="display:flex; flex-direction:column; align-items:center; height:100%; gap:16px; padding-top:2vh">
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; white-space:pre-line">${CFG.mission3a.ecran}</div>
+      <div class="mc-couloir" id="mcCouloir">
+        <div class="mc-couloir-track" id="mcTrack" style="height:${HAUTEUR}px">
+          ${couloirDecorHTML(HAUTEUR, HAUTEUR-260)}
+          <img class="mc-chat vu" id="mcChat" src="${window.__resources.chatCheshireImg}" alt="Chat" style="top:${HAUTEUR-260}px">
+        </div>
+      </div>
+      <div class="m1-win" id="mc3aWin"><div class="m1-win-card"><div class="m1-win-t">Bravo, super !</div><div class="m1-win-s">${CFG.mission3a.reussi}</div></div></div>
+    </div>`;
+    const couloir=document.getElementById('mcCouloir'), track=document.getElementById('mcTrack'), chat=document.getElementById('mcChat');
+    const maxPos=Math.max(0, HAUTEUR-couloir.clientHeight);
+    let pos=0, done=false;
+    couloir.addEventListener('wheel', e=>{ if(done)return; e.preventDefault(); pos=Math.max(0, Math.min(maxPos, pos+e.deltaY*0.55)); track.style.transform=`translateY(${-pos}px)`; }, {passive:false});
+    chat.addEventListener('click', ()=>{
+      if(done)return; done=true; majProgC(4, true); if(typeof bipOk==='function') bipOk();
+      const w=document.getElementById('mc3aWin'); if(w) w.classList.add('show');
+      jouerVictoireC(3, cSuite);
+    });
+    jouerC(5);
+  }
+
+  /* ===== Mission 4 — le jardin final : pièces + buissons + coffres normaux + trésor final (pas de reset sur erreur) ===== */
+  function cMission4(){
+    current={kind:'mission4C'}; majProgC(4, true);
+    activerSuivi(false); cacheKompa();
+    mainEl().innerHTML=`<div class="screen active" style="display:flex; flex-direction:column; align-items:center; height:100%; gap:clamp(12px,2.4vh,26px); padding-top:2vh">
+      <div class="ecran" id="ecranBox" style="color:#C44D59; border:3px solid #C44D59; position:relative; white-space:pre-line; max-width:min(92vw,900px)">${CFG.mission4.ecran}</div>
+      <div class="mc-jardin-zone">
+        <div class="mc-coin-compteur" id="mcCoinCompteur"><span>🪙</span><span id="mcCoinNb">0</span></div>
+        <div class="mc-jardin" id="mcJardin"><div class="mc-jardin-track" id="mcJardinTrack"></div></div>
+      </div>
+      <div class="m1-win" id="mc4Win"><div class="m1-win-card"><div class="m1-win-t">Bravo, super !</div><div class="m1-win-s">${CFG.mission4.reussi}</div></div></div>
+    </div>`;
+    const jardin=document.getElementById('mcJardin'), track=document.getElementById('mcJardinTrack'), coinNb=document.getElementById('mcCoinNb'), consBox=document.getElementById('ecranBox');
+    let pos=0, done=false, pieces=0;
+    const HAUTEUR=2800, ROW=210;
+    const ajouterOr=(n, x, y)=>{ pieces+=n; coinNb.textContent=String(pieces); gainVole('+'+n+' 🪙', x, y); };
+    const rater=(texte)=>{
+      consBox.textContent=texte; consBox.classList.add('cons-alt');
+      cTempo(1600, ()=>{ consBox.textContent=CFG.mission4.ecran; consBox.classList.remove('cons-alt'); });
+    };
+
+    // Génération unique du jardin (aucune régénération en cas d'erreur : le flash rouge suffit)
+    let items=[]; let y=140; let i=0; let specialAffectee=false;
+    const specialIndex = 2+Math.floor(Math.random()*2); // 3e ou 4e buisson rencontré
+    let compteurBuisson=0;
+    while(y<HAUTEUR-160){
+      const r=Math.random();
+      if(i%2===1){
+        compteurBuisson++;
+        const isCoffre = !((compteurBuisson-1)===specialIndex) && r<0.3;
+        const isSpecial = (compteurBuisson-1)===specialIndex;
+        if(isSpecial) specialAffectee=true;
+        items.push({type: isCoffre?'coffre':'buisson', y, special:isSpecial, id:'b'+i});
+      } else {
+        items.push({type:'piece', y:y+(Math.random()*60-30), id:'p'+i});
+      }
+      y+=ROW; i++;
+    }
+    if(!specialAffectee){ const bs=items.filter(it=>it.type==='buisson'); if(bs.length) bs[bs.length-1].special=true; else if(items.length) items[items.length-1]={type:'buisson', y:items[items.length-1].y, special:true, id:'bx'}; }
+
+    const dessiner=()=>{
+      track.innerHTML=''; track.style.height=HAUTEUR+'px';
+      items.forEach(it=>{
+        if(it.type==='piece'){
+          const img=document.createElement('img'); img.className='mc-piece'; img.id=it.id;
+          img.src=window.__resources.pieceOrImg; img.alt='pièce';
+          img.style.left=(30+Math.random()*40)+'%'; img.style.top=it.y+'px';
+          img.addEventListener('click', ()=>{ if(img.classList.contains('ramassee'))return; img.classList.add('ramassee'); if(typeof bipClic==='function') bipClic(); const r=img.getBoundingClientRect(); ajouterOr(1, r.left, r.top); });
+          track.appendChild(img);
+        } else if(it.type==='coffre'){
+          const img=document.createElement('img'); img.className='mc-buisson'; img.id=it.id;
+          img.src=window.__resources.coffreBonbonsImg; img.alt='coffre';
+          img.style.left=(35+Math.random()*30)+'%'; img.style.top=it.y+'px'; img.style.width='100px'; img.style.height='100px';
+          img.addEventListener('contextmenu', e=>{
+            e.preventDefault(); if(done||img.classList.contains('disparu'))return;
+            ouvrirMenuC(e.clientX, e.clientY, [ {id:'ouvrir', label:'Ouvrir', emoji:'🔓'}, {id:'supprimer', label:'Supprimer', img:window.__resources.iconSupprimerImg} ], choix=>{
+              if(choix==='ouvrir'){ if(typeof bipOk==='function') bipOk(); img.classList.add('disparu'); const r=img.getBoundingClientRect(); ajouterOr(5, r.left, r.top); }
+              else { if(typeof bipNon==='function') bipNon(); rater(CFG.mission4.ratéCoffre); }
+            });
+          });
+          track.appendChild(img);
+        } else {
+          const img=document.createElement('img'); img.className='mc-buisson'; img.id=it.id; img.dataset.special=it.special?'1':'';
+          img.src=window.__resources.buissonImg; img.alt='buisson';
+          img.style.left=(35+Math.random()*30)+'%'; img.style.top=it.y+'px';
+          img.addEventListener('contextmenu', e=>{
+            e.preventDefault(); if(done||img.classList.contains('disparu'))return;
+            ouvrirMenuC(e.clientX, e.clientY, [ {id:'ouvrir', label:'Ouvrir', emoji:'🔓'}, {id:'supprimer', label:'Supprimer', img:window.__resources.iconSupprimerImg} ], choix=>{
+              const special = img.dataset.special==='1';
+              if(!special){
+                if(choix==='supprimer'){ if(typeof bipOk==='function') bipOk(); img.classList.add('disparu'); }
+                else { if(typeof bipNon==='function') bipNon(); rater(CFG.mission4.ratéBuisson); }
+              } else {
+                if(choix==='supprimer'){
+                  if(typeof bipOk==='function') bipOk();
+                  const coffre=document.createElement('img'); coffre.className='mc-buisson'; coffre.style.left=img.style.left; coffre.style.top=img.style.top; coffre.style.width='130px'; coffre.style.height='130px';
+                  coffre.src=window.__resources.coffreTresorFinalImg; coffre.alt='trésor';
+                  coffre.addEventListener('contextmenu', ev=>{
+                    ev.preventDefault(); if(done)return;
+                    ouvrirMenuC(ev.clientX, ev.clientY, [ {id:'ouvrir', label:'Ouvrir', emoji:'🔓'}, {id:'supprimer', label:'Supprimer', img:window.__resources.iconSupprimerImg} ], choix2=>{
+                      if(choix2==='ouvrir'){
+                        done=true; if(typeof bipOk==='function') bipOk(); majProgC(5, true);
+                        const r=coffre.getBoundingClientRect(); ajouterOr(100, r.left, r.top);
+                        cTempo(650, ()=>allerCA(cParcours.length-1));
+                      } else {
+                        if(typeof bipNon==='function') bipNon();
+                        const f=document.createElement('img'); f.className='mc-fumee actif'; f.src=window.__resources.fumeeImg; f.alt='';
+                        f.style.left=coffre.style.left; f.style.top=coffre.style.top; track.appendChild(f);
+                        setTimeout(()=>f.remove(), 1000);
+                        rater(CFG.mission4.ratéCoffreFinal);
+                      }
+                    });
+                  });
+                  track.appendChild(coffre); img.remove();
+                } else { if(typeof bipNon==='function') bipNon(); rater(CFG.mission4.ratéBuisson); }
+              }
+            });
+          });
+          track.appendChild(img);
+        }
+      });
+    };
+    jardin.addEventListener('wheel', e=>{
+      if(done)return; e.preventDefault();
+      const maxPos=Math.max(0, HAUTEUR-jardin.clientHeight);
+      pos=Math.max(0, Math.min(maxPos, pos+e.deltaY*0.55));
+      track.style.transform=`translateY(${-pos}px)`;
+    }, {passive:false});
+    dessiner();
+    jouerC(6);
+  }
+
+  /* ===== Badge de fin (dernier niveau : médaille du niveau, puis le Professeur remet le Permis complet) ===== */
+  function cBadge(){
+    current={kind:'badgeC'}; majProgC(5);
+    setHeaderTools(false);
+    const confettis=Array.from({length:14}).map((_,k)=>{ const left=6+k*6.5, delay=(k%7)*0.32, emo=['🎉','✨','⭐','🎊','🌟'][k%5]; return `<div class="conf" style="left:${left}%;animation-delay:${delay}s">${emo}</div>`; }).join('');
+    mainEl().innerHTML=`<div class="screen active">
+      <div class="victoire">
+        ${confettis}
+        <div class="medaille-img" style="font-size:clamp(70px,12vw,130px)">🏅</div>
+        <h1 id="titre">Bravo !</h1>
+        <div class="kompa-bulle sans-queue" style="position:static; white-space:pre-line; max-width:min(640px,64vw)">${CFG.badge.ecran}</div>
+        <div id="mcPermis" style="display:flex; align-items:center; justify-content:center; gap:clamp(10px,2vw,28px); margin-top:clamp(10px,2vh,22px); opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease">
+          <img src="${KOMPA_SRC}" alt="${PROF_NOM}" style="height:clamp(90px,16vh,180px); width:auto">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
+            <img src="assets/images/medaille.webp" alt="Permis de la Souris" style="height:clamp(80px,14vh,150px); width:auto">
+            <div style="font-weight:800; color:#C44D59; font-size:clamp(14px,1.7vw,22px); text-align:center">Le Permis de la Souris</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    bipOk(); try{ pqSetFait('C'); }catch(_){}
+    // 2e temps : le Professeur apparaît avec le Permis, une fois la médaille du niveau bien vue
+    cTempo(1800, ()=>{
+      const p=document.getElementById('mcPermis');
+      if(p){ p.style.opacity='1'; p.style.transform='translateY(0)'; if(typeof bipOk==='function') bipOk(); }
+    });
+    jouerC(7);
+  }
+
+  const cParcours=[ cPresentation, cPhaseTest, cMission1, cMission2, cPresentationScroll, cMission3A, cMission4, cBadge ];
+  function majRetourC(){ if(typeof retourBtn!=='undefined' && retourBtn){ retourBtn.disabled=(cEtape===0); } }
+  function majNavC(){
+    const nav=document.getElementById('nbNav'); if(!nav) return;
+    const prec=document.getElementById('nbPrecBtn'), suiv=document.getElementById('nbSuivBtn');
+    if(prec) prec.disabled=(cEtape===0);
+    if(suiv) suiv.style.display=(cEtape===cParcours.length-1)?'none':'';
+  }
+  function allerCA(i){
+    cEtape=Math.max(0,Math.min(cParcours.length-1,i)); clearC();
+    try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(_){}
+    cParcours[cEtape](); majRetourC(); majNavC();
+  }
+
+  function lancer(){
+    debloqueAudio(); musiqueStart(); musiqueDuck(true);
+    if(typeof pqEl!=='undefined' && pqEl) pqEl.classList.remove('on');
+    setHeaderTools(true);
+    if(typeof retourBtn!=='undefined' && retourBtn) retourBtn.onclick=()=>allerCA(cEtape-1);
+    const nav=document.getElementById('nbNav'), prec=document.getElementById('nbPrecBtn'), suiv=document.getElementById('nbSuivBtn');
+    if(nav){ nav.style.display=cAudioPret()?'none':'flex'; if(prec) prec.onclick=()=>{ bipClic(); allerCA(cEtape-1); }; if(suiv) suiv.onclick=()=>{ bipClic(); allerCA(cEtape+1); }; }
+    bipClic(); cEtape=0; allerCA(0);
+  }
+  function stop(){
+    clearC();
+    try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(_){}
+    if(typeof retourBtn!=='undefined' && retourBtn) retourBtn.onclick=()=>allerA(etape-1);
+    const nav=document.getElementById('nbNav'); if(nav) nav.style.display='none';
+    const n4=document.querySelector('#steps .snode[data-i="4"]'); if(n4) n4.style.display='';
+  }
+  return { lancer:lancer, stop:stop };
+})();
+window.NC = NC;
+function lancerNiveauC(){ if(window.NC) window.NC.lancer(); }
+/* =================== FIN NIVEAU C =================== */
+
 
 majProg(); majRetour(); ouvrirParcours(); document.addEventListener('pointerdown', ()=>debloqueAudio(), {once:true});
-
