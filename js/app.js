@@ -722,7 +722,7 @@ function renderParcours(){
 
 function pqActiver(data, etat, div, isPermis){
   if(isPermis){
-    if(etat==='gagne'){ pqToast('🏅 Permis de la Souris obtenu — bravo !'); }
+    if(etat==='gagne'){ pfOuvrir(); }
     else { div.classList.remove('pq-secoue'); void div.offsetWidth; div.classList.add('pq-secoue'); pqToast('🏅 Termine les 3 niveaux pour gagner ton Permis !'); }
     return;
   }
@@ -787,7 +787,7 @@ function installerBoutonAdmin(){
     if(saisie===null) return;                       // annulé
     if(saisie!==ADMIN_CODE){ pqToast("Code incorrect."); return; }
     if(!confirm("Effacer la progression et recommencer au niveau A ?")) return;
-    try{ localStorage.removeItem('permisNiveauxFaits'); }catch(e){}
+    try{ localStorage.removeItem('permisNiveauxFaits'); localStorage.removeItem('permisDebut'); localStorage.removeItem('permisTempsFinal'); localStorage.removeItem('permisEleveInfo'); }catch(e){}
     renderParcours(); pqToast("Progression réinitialisée.");
   });
   pqEl.appendChild(b);
@@ -796,9 +796,115 @@ function debloqueAudio(){
   try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){}
   if('speechSynthesis' in window){ try{ speechSynthesis.resume(); const w=new SpeechSynthesisUtterance('Go'); w.lang='fr-FR'; w.volume=0; speechSynthesis.speak(w); }catch(e){} }
 }
+
+/* ===== PAGE FINALE : obtention du Permis de la Souris ===== */
+const PF_DEBUT_KEY='permisDebut', PF_TEMPS_KEY='permisTempsFinal', PF_INFO_KEY='permisEleveInfo', PF_REGISTRE_KEY='permisRegistre';
+const permisFinalEl=document.getElementById('permisFinal');
+const pfLogo=document.getElementById('pfLogo');
+const pfForm=document.getElementById('pfForm');
+const pfCongrats=document.getElementById('pfCongrats');
+const pfPrenomInp=document.getElementById('pfPrenom');
+const pfNomInp=document.getElementById('pfNom');
+const pfValiderBtn=document.getElementById('pfValiderBtn');
+const pfMsgEl=document.getElementById('pfMsg');
+const pfRetourBtn=document.getElementById('pfRetourBtn');
+const pfAppelEl=document.getElementById('pfAppel');
+const pfIntervenantBtn=document.getElementById('pfIntervenantBtn');
+const pfTempsBox=document.getElementById('pfTempsBox');
+const pfTempsVal=document.getElementById('pfTempsVal');
+
+function pfMarquerDebut(){
+  try{ if(pqNbFaits()===0 && !localStorage.getItem(PF_DEBUT_KEY)) localStorage.setItem(PF_DEBUT_KEY, String(Date.now())); }catch(e){}
+}
+function pfFormatTemps(ms){
+  const s=Math.max(0,Math.round(ms/1000)), mm=Math.floor(s/60), ss=s%60;
+  return String(mm).padStart(2,'0')+':'+String(ss).padStart(2,'0');
+}
+function pfMarquerFin(){
+  try{
+    if(localStorage.getItem(PF_TEMPS_KEY)) return;
+    const debut=parseInt(localStorage.getItem(PF_DEBUT_KEY)||'',10);
+    const ms=isNaN(debut)?0:(Date.now()-debut);
+    localStorage.setItem(PF_TEMPS_KEY, pfFormatTemps(ms));
+  }catch(e){}
+}
+function pfEnregistrer(nom, prenom){
+  const temps=(function(){ try{ return localStorage.getItem(PF_TEMPS_KEY)||'00:00'; }catch(e){ return '00:00'; } })();
+  const ligne=`${nom} ${prenom} — Temps d'exécution : ${temps}`;
+  try{
+    const r=localStorage.getItem(PF_REGISTRE_KEY); const a=r?JSON.parse(r):[];
+    a.push(ligne); localStorage.setItem(PF_REGISTRE_KEY, JSON.stringify(a));
+    localStorage.setItem(PF_INFO_KEY, JSON.stringify({nom:nom, prenom:prenom, temps:temps}));
+  }catch(e){}
+  return {temps:temps, ligne:ligne};
+}
+function pfAfficherCongrats(prenom){
+  pfForm.style.display='none';
+  pfCongrats.style.display='flex';
+  pfMsgEl.textContent=`Bravo, ${prenom} tu as obtenu ton permis de la souris ! Master Mouse !`;
+  if(pfAppelEl) pfAppelEl.style.display='';
+  if(pfIntervenantBtn) pfIntervenantBtn.style.display='';
+  if(pfTempsBox) pfTempsBox.style.display='none';
+}
+if(pfValiderBtn) pfValiderBtn.addEventListener('click', ()=>{
+  const prenom=(pfPrenomInp.value||'').trim(), nom=(pfNomInp.value||'').trim();
+  if(!prenom || !nom){ pqToast('Merci de renseigner ton nom et ton prénom.'); return; }
+  bipOk();
+  pfEnregistrer(nom, prenom);
+  pfAfficherCongrats(prenom);
+});
+if(pfIntervenantBtn) pfIntervenantBtn.addEventListener('click', ()=>{
+  bipOk();
+  let temps='00:00'; try{ temps=localStorage.getItem(PF_TEMPS_KEY)||'00:00'; }catch(e){}
+  if(pfTempsVal) pfTempsVal.textContent=temps;
+  if(pfTempsBox) pfTempsBox.style.display='flex';
+  if(pfAppelEl) pfAppelEl.style.display='none';
+  pfIntervenantBtn.style.display='none';
+});
+if(pfRetourBtn) pfRetourBtn.addEventListener('click', ()=>{ bipClic(); if(permisFinalEl) permisFinalEl.classList.remove('on'); ouvrirParcours(); });
+function pfTelechargerRegistre(){
+  let lignes=[]; try{ const r=localStorage.getItem(PF_REGISTRE_KEY); if(r) lignes=JSON.parse(r); }catch(e){}
+  const blob=new Blob([lignes.join('\n')+'\n'], {type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download='registre-permis-souris.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+function installerBoutonAdminPF(){
+  if(!permisFinalEl || document.getElementById('pfAdminBtn')) return;
+  const b=document.createElement('button');
+  b.id='pfAdminBtn'; b.type='button'; b.textContent='⬇';
+  b.title="Télécharger le registre des élèves (intervenant)";
+  b.setAttribute('aria-label',"Télécharger le registre des élèves (intervenant)");
+  b.style.cssText='position:absolute; left:10px; bottom:10px; z-index:40; width:34px; height:34px;'
+    +'border-radius:50%; border:2px solid #b9c6d6; background:#fff; color:#7d8a99; font-size:16px;'
+    +'line-height:1; cursor:pointer; opacity:.35; transition:opacity .2s ease; padding:0;';
+  b.addEventListener('mouseenter', ()=>{ b.style.opacity='1'; });
+  b.addEventListener('mouseleave', ()=>{ b.style.opacity='.35'; });
+  b.addEventListener('click', ()=>{
+    const saisie=prompt("Code encadrant pour télécharger le registre :");
+    if(saisie===null) return;
+    if(saisie!==ADMIN_CODE){ pqToast("Code incorrect."); return; }
+    pfTelechargerRegistre();
+  });
+  permisFinalEl.appendChild(b);
+}
+function pfOuvrir(){
+  if(window.NC && window.NC.stop) window.NC.stop();
+  if(window.NB && window.NB.stop) window.NB.stop();
+  if(pqEl) pqEl.classList.remove('on');
+  pfMarquerFin();
+  installerBoutonAdminPF();
+  if(pfLogo && !pfLogo.firstChild){ const appLogo=document.querySelector('header .logo svg'); if(appLogo){ const c=appLogo.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id')); pfLogo.appendChild(c); } }
+  let info=null; try{ const r=localStorage.getItem(PF_INFO_KEY); if(r) info=JSON.parse(r); }catch(e){}
+  if(info && info.prenom){ pfAfficherCongrats(info.prenom); }
+  else { pfForm.style.display='flex'; pfCongrats.style.display='none'; if(pfPrenomInp) pfPrenomInp.value=''; if(pfNomInp) pfNomInp.value=''; }
+  if(permisFinalEl) permisFinalEl.classList.add('on');
+}
 function lancerNiveauA(){
   debloqueAudio(); musiqueStart(); musiqueDuck(true);
   pqEl.classList.remove('on');
+  pfMarquerDebut();
   bipClic(); allerA(0);
 }
 if(pqHomeBtn) pqHomeBtn.onclick=()=>{ bipClic(); ouvrirParcours(); };
@@ -1822,7 +1928,7 @@ const NC = (function(){
     jouerC(6);
   }
 
-  /* ===== Badge de fin (dernier niveau : médaille du niveau, puis le Professeur remet le Permis complet) ===== */
+  /* ===== Badge de fin (dernier niveau : bravo, puis bouton Suivant vers la page du Permis) ===== */
   function cBadge(){
     current={kind:'badgeC'}; majProgC(5);
     setHeaderTools(false);
@@ -1833,20 +1939,17 @@ const NC = (function(){
         <div class="medaille-img" style="font-size:clamp(70px,12vw,130px)">🏅</div>
         <h1 id="titre">Bravo !</h1>
         <div class="kompa-bulle sans-queue" style="position:static; white-space:pre-line; max-width:min(640px,64vw)">${CFG.badge.ecran}</div>
-        <div id="mcPermis" style="display:flex; align-items:center; justify-content:center; gap:clamp(10px,2vw,28px); margin-top:clamp(10px,2vh,22px); opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease">
-          <img src="${KOMPA_SRC}" alt="${PROF_NOM}" style="height:clamp(90px,16vh,180px); width:auto">
-          <div style="display:flex; flex-direction:column; align-items:center; gap:6px">
-            <img src="assets/images/medaille.webp" alt="Permis de la Souris" style="height:clamp(80px,14vh,150px); width:auto">
-            <div style="font-weight:800; color:#C44D59; font-size:clamp(14px,1.7vw,22px); text-align:center">Le Permis de la Souris</div>
-          </div>
-        </div>
+        <button class="btn" id="mcSuivantBtn" style="opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease">Suivant ▶</button>
       </div>
     </div>`;
     bipOk(); try{ pqSetFait('C'); }catch(_){}
-    // 2e temps : le Professeur apparaît avec le Permis, une fois la médaille du niveau bien vue
+    try{ if(typeof pfMarquerFin==='function') pfMarquerFin(); }catch(_){}
     cTempo(1800, ()=>{
-      const p=document.getElementById('mcPermis');
-      if(p){ p.style.opacity='1'; p.style.transform='translateY(0)'; if(typeof bipOk==='function') bipOk(); }
+      const b=document.getElementById('mcSuivantBtn');
+      if(b){
+        b.style.opacity='1'; b.style.transform='translateY(0)'; if(typeof bipOk==='function') bipOk();
+        b.addEventListener('click', ()=>{ bipClic(); if(typeof pfOuvrir==='function') pfOuvrir(); });
+      }
     });
     jouerC(7);
   }

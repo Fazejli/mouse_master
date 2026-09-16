@@ -99,6 +99,37 @@
     </div>
   </div>
 </div>
+<!-- PAGE FINALE : obtention du Permis de la Souris -->
+<div id="permisFinal">
+  <div class="pq-header">
+    <div class="pq-brand">
+      <div class="pq-logo" id="pfLogo"></div>
+    </div>
+    <div class="pq-h1">Permis de la Souris</div>
+  </div>
+  <div class="pf-stage">
+    <div class="pf-carte">
+      <img class="pf-medaille" src="assets/images/medaille.webp" alt="Permis de la Souris">
+      <div id="pfForm" class="pf-form">
+        <h2>Bravo, tu as terminé le parcours !</h2>
+        <p class="pf-sous">Renseigne ton nom et ton prénom pour valider ton Permis de la Souris.</p>
+        <label class="pf-label">Prénom<input type="text" id="pfPrenom" class="pf-input" autocomplete="off"></label>
+        <label class="pf-label">Nom<input type="text" id="pfNom" class="pf-input" autocomplete="off"></label>
+        <button class="btn" id="pfValiderBtn">Valider</button>
+      </div>
+      <div id="pfCongrats" class="pf-congrats" style="display:none">
+        <h1 id="pfMsg"></h1>
+        <div class="ecran" id="pfAppel">Appelle l'intervenant pour qu'il puisse noter tes informations !</div>
+        <button class="btn" id="pfIntervenantBtn">L'intervenant est arrivé</button>
+        <div class="pf-temps" id="pfTempsBox" style="display:none">
+          <span class="pf-temps-label">Temps d'exécution</span>
+          <span class="pf-temps-val" id="pfTempsVal"></span>
+        </div>
+      </div>
+    </div>
+    <button class="tbtn" id="pfRetourBtn">◀ Retour au parcours</button>
+  </div>
+</div>
 <div id="pq-toast"></div>
 <div class="nb-nav" id="nbNav" style="display:none">
   <button class="tbtn" id="nbPrecBtn">◀ Préc.</button>
