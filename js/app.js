@@ -808,6 +808,10 @@ const pfNomInp=document.getElementById('pfNom');
 const pfValiderBtn=document.getElementById('pfValiderBtn');
 const pfMsgEl=document.getElementById('pfMsg');
 const pfRetourBtn=document.getElementById('pfRetourBtn');
+const pfAppelEl=document.getElementById('pfAppel');
+const pfIntervenantBtn=document.getElementById('pfIntervenantBtn');
+const pfTempsBox=document.getElementById('pfTempsBox');
+const pfTempsVal=document.getElementById('pfTempsVal');
 
 function pfMarquerDebut(){
   try{ if(pqNbFaits()===0 && !localStorage.getItem(PF_DEBUT_KEY)) localStorage.setItem(PF_DEBUT_KEY, String(Date.now())); }catch(e){}
@@ -838,6 +842,9 @@ function pfAfficherCongrats(prenom){
   pfForm.style.display='none';
   pfCongrats.style.display='flex';
   pfMsgEl.textContent=`Bravo, ${prenom} tu as obtenu ton permis de la souris ! Master Mouse !`;
+  if(pfAppelEl) pfAppelEl.style.display='';
+  if(pfIntervenantBtn) pfIntervenantBtn.style.display='';
+  if(pfTempsBox) pfTempsBox.style.display='none';
 }
 if(pfValiderBtn) pfValiderBtn.addEventListener('click', ()=>{
   const prenom=(pfPrenomInp.value||'').trim(), nom=(pfNomInp.value||'').trim();
@@ -845,6 +852,14 @@ if(pfValiderBtn) pfValiderBtn.addEventListener('click', ()=>{
   bipOk();
   pfEnregistrer(nom, prenom);
   pfAfficherCongrats(prenom);
+});
+if(pfIntervenantBtn) pfIntervenantBtn.addEventListener('click', ()=>{
+  bipOk();
+  let temps='00:00'; try{ temps=localStorage.getItem(PF_TEMPS_KEY)||'00:00'; }catch(e){}
+  if(pfTempsVal) pfTempsVal.textContent=temps;
+  if(pfTempsBox) pfTempsBox.style.display='flex';
+  if(pfAppelEl) pfAppelEl.style.display='none';
+  pfIntervenantBtn.style.display='none';
 });
 if(pfRetourBtn) pfRetourBtn.addEventListener('click', ()=>{ bipClic(); if(permisFinalEl) permisFinalEl.classList.remove('on'); ouvrirParcours(); });
 function pfTelechargerRegistre(){

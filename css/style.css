@@ -321,17 +321,28 @@
   #permisFinal .pq-logo svg{ height:clamp(26px,5vh,46px); width:auto; display:block; }
   #permisFinal .pq-h1{ flex:1 1 auto; text-align:center; font-weight:800; font-size:clamp(18px,2.8vw,34px); line-height:1.05; color:var(--rouge); text-transform:uppercase; }
   .pf-stage{ flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; }
-  .pf-carte{ background:var(--blanc); border:4px solid var(--noir); box-shadow:10px 10px 0 0 var(--noir); padding:clamp(20px,3.6vw,40px); display:flex; flex-direction:column; align-items:center; gap:14px; max-width:min(520px,90vw); text-align:center; }
-  .pf-medaille{ width:clamp(110px,16vw,170px); height:auto; }
-  .pf-form{ display:flex; flex-direction:column; align-items:center; gap:12px; width:100%; }
-  .pf-form h2{ text-align:center; }
+  .pf-carte{ background:var(--blanc); border:4px solid var(--noir); box-shadow:12px 12px 0 0 var(--noir); padding:clamp(22px,3vw,42px) clamp(28px,4.4vw,58px); display:flex; flex-direction:row; align-items:center; gap:clamp(22px,4vw,50px); max-width:min(860px,94vw); width:100%; text-align:left; }
+  .pf-medaille{ flex:none; width:clamp(100px,13vw,160px); height:auto; }
+  .pf-form{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; width:100%; min-width:0; }
+  .pf-form h2{ text-align:left; }
   .pf-sous{ font-weight:700; font-size:clamp(13px,1.5vw,17px); color:var(--gris); }
   .pf-label{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; width:100%; max-width:320px; font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:var(--gris); }
   .pf-input{ width:100%; font-family:inherit; font-size:clamp(15px,1.8vw,19px); font-weight:700; padding:10px 12px; border:3px solid var(--noir); background:var(--blanc); color:var(--noir); }
   .pf-input:focus-visible{ outline:4px solid var(--orange); }
-  .pf-congrats{ display:flex; flex-direction:column; align-items:center; gap:16px; }
-  .pf-congrats h1{ text-align:center; }
-  #permisFinal .ecran{ font-size:clamp(14px,1.6vw,19px); }
+  .pf-congrats{ display:flex; flex-direction:column; align-items:flex-start; gap:16px; width:100%; min-width:0; text-align:left; }
+  .pf-congrats h1{ text-align:left; }
+  .pf-temps{ display:flex; align-items:baseline; gap:10px; background:var(--ciel); border:3px solid var(--noir); padding:10px 16px; align-self:flex-start; animation:cochePop .5s cubic-bezier(.2,1.5,.4,1); }
+  .pf-temps-label{ font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--gris); }
+  .pf-temps-val{ font-weight:800; font-size:clamp(22px,3vw,30px); color:var(--vert); }
+  #permisFinal .ecran{ font-size:clamp(14px,1.6vw,19px); align-self:flex-start; text-align:left; }
+  @media (max-width:760px){
+    .pf-carte{ flex-direction:column; text-align:center; }
+    .pf-form, .pf-congrats{ align-items:center; }
+    .pf-form h2, .pf-congrats h1{ text-align:center; }
+    .pf-label{ align-items:center; }
+    #permisFinal .ecran{ align-self:center; text-align:center; }
+    .pf-temps{ align-self:center; }
+  }
 
 /* ===================== NIVEAU B (maintien & glisser-déposer) ===================== */
   #main .nb-wrap{ position:absolute; inset:0; display:flex; flex-direction:column; gap:12px; }
